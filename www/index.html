@@ -111,6 +111,7 @@
 			$('[data-role=footer]').each( function() {
             	$(this).load("footer.html", function(data, status, xhr){
             		alert(status);
+            		$(this).children("[data-role=navbar]").first().navbar();
             	});
         	});
         	
