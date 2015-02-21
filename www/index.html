@@ -35,6 +35,7 @@
         <link rel="stylesheet" type="text/css" href="jquery.mobile.inline-svg-1.4.5.min.css" />
         <link rel="stylesheet" type="text/css" href="jquery.mobile.structure-1.4.5.min.css" />
         <link rel="stylesheet" type="text/css" href="jquery.mobile.theme-1.4.5.min.css" />
+        <link rel="stylesheet" type="text/css" href="jw-jqm-cal.css" />
         <link rel="stylesheet" type="text/css" href="Livet.min.css" />
         <link rel="stylesheet" type="text/css" href="css/livet.css" />
         
@@ -60,24 +61,73 @@
 
 </div>
 
-<div data-role="page"  id="profile" style="background: url(images/1554564_524919460940652_2126412582_n.jpg) no-repeat fixed center; background-size: 100% auto;" >
+<div data-role="page"  id="profile" style="background: url(images/1554564_524919460940652_2126412582_n.jpg) no-repeat fixed center; background-size: 100% 100%;" >
   <div data-role="panel" id="myPanel"> 
-    <h2>Panel Header</h2>
-    <p>You can close the panel by clicking outside the panel, pressing the Esc key or by swiping.</p>
+    <form>
+		<div>
+          <h3>Editing Profile</h3>
+          <label for="name" class="ui-hidden-accessible">Name:</label>
+          <input type="text" name="profile_name" id="profile_name" placeholder="Name">
+          <label for="gender">Gender</label>
+        	<select name="profile_gender" id="gender">
+          		<option value="male">Male</option>
+          		<option value="female">Female</option>
+          </select>
+          <label for="profile_age">Age:</label>
+      	  <input type="range" name="profile_age" id="profile_age" value="50" min="0" max="100">
+      	  <label for="weight">Weight (Pounds):</label>
+      	  <input type="range" name="profile_weight" id="weight" value="160" min="0" max="300">
+      	  <label for="profile_sugar">Blood Sugar:</label>
+      	  <input type="range" name="profile_sugar" id="profile_sugar" value="140" min="0" max="300">
+      	  <label for="profile_sugar_fasting">Blood Sugar (Fasting):</label>
+      	  <input type="range" name="profile_sugar_fasting" id="profile_sugar_fasting" value="80" min="0" max="300">
+      	  <label for="profile_systolic">Systolic:</label>
+      	  <input type="range" name="profile_systolic" id="profile_systolic" value="120" min="0" max="300">
+      	  <label for="profile_diastolic">Diastolic:</label>
+      	  <input type="range" name="profile_diastolic" id="profile_diastolic" value="80" min="0" max="300">
+          <a id="profile_save" class="ui-btn ui-icon-save" data-rel="close">Save</a>
+        </div>
+      </form>
   </div> 
 
- <div data-role="header" data-position="fixed" data-fullscreen="true">
-  		<img src="icon2.png" style="width: 55px; float:left;display:inline"><p>&nbsp;&nbsp;Livet Wellness<p>
+ <div data-role="header" data-position="fixed" data-fullscreen="true" class="text-center" >
+  		<img src="icon2.png" style="width: 55px; float:left; display:inline;"><p style="float: left;">&nbsp;&nbsp;Livet Wellness<p>
   </div>
 
-  <div data-role="main" class="ui-conten text-center">
-  	<br><br><br>
-    <p>Click on the button below to open the Panel.</p>
-    <a href="#myPanel" class="ui-btn ui-icon-edit ui-btn-icon-left ui-btn-inline ui-corner-all">Edit</a>
+  <div data-role="main" class="ui-content text-center">
+  	
+  	<div style="background-color:rgba(255,255,255,0.75); width: 80%; margin-left: 10%; margin-top: 15%; border-radius: 10px; text-align: center;">
+  		<br>
+  		<table class="text-left ui-responsive" style="margin: auto;" >
+  			<tr><td><strong>Name:</strong></td><td><p id="profileName"> </p></td></tr>
+  			<tr><td><strong>Age:</strong></td><td><p id="profileAge"> </p></td></tr>  		
+  		</table>
+    	<a href="#myPanel" class="ui-btn ui-icon-edit ui-btn-icon-left ui-btn-inline ui-mini ui-corner-all">Edit</a>
+  	</div>
+  	
   </div>
 
   <div data-role="footer" data-position="fixed"></div>
    
+</div>
+
+<div data-role="page"  id="calendar" style="background: url(images/1554564_524919460940652_2126412582_n.jpg) no-repeat fixed center; background-size: 100% 100%;" >
+
+  <div data-role="header" data-position="fixed" data-fullscreen="true" class="text-center" >
+  		<img src="icon2.png" style="width: 55px; float:left; display:inline;"><p style="float: left;">&nbsp;&nbsp;Livet Wellness<p>
+  </div>
+  
+  <div data-role="main" class="ui-content text-center"  style="background-color:rgba(255,255,255,0.75);">
+  	
+  	<div data-role="content">
+                <div id="calendar"></div>
+    </div>
+  	
+  </div>
+
+
+  <div data-role="footer" data-position="fixed"></div>
+	
 </div> 
 
  
@@ -87,6 +137,7 @@
         <script type="text/javascript" src="js/backbone.js"></script>
         <script src="jquery-1.11.2.min.js"></script>
         <script type="text/javascript" src="jquery.mobile-1.4.5.min.js"></script>
+        <script type="text/javascript" src="jw-jqm-cal.js"></script>
         <script type="text/javascript">
         	
         	
