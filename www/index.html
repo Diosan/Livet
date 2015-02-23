@@ -84,8 +84,8 @@
       	  <label for="profile_systolic">Systolic:</label>
       	  <input type="range" name="profile_systolic" id="profile_systolic" value="120" min="0" max="300">
       	  <label for="profile_diastolic">Diastolic:</label>
-      	  <input type="range" name="profile_diastolic" id="profile_diastolic" value="80" min="0" max="300">
-          <a id="profile_save" class="ui-btn ui-icon-save" data-rel="close">Save</a>
+      	  <input type="range" name="profile_diastolic" id="profile_diastolic" value="80" min="0" max="300">   	  
+          <a id="profile_save" class="ui-btn ui-icon-edit ui-btn-icon-left ui-btn-inline ui-mini ui-corner-all" data-rel="close">Save</a>
         </div>
       </form>
   </div> 
@@ -99,11 +99,14 @@
   	<div style="background-color:rgba(255,255,255,0.75); width: 80%; margin-left: 10%; margin-top: 15%; border-radius: 10px; text-align: center;">
   		<br>
   		<table class="text-left ui-responsive" style="margin: auto;" >
-  			<tr><td><strong>Name:</strong></td><td><p id="profileName"> </p></td></tr>
-  			<tr><td><strong>Age:</strong></td><td><p id="profileAge"> </p></td></tr>  		
+  			<tr><td><strong>Name:</strong></td><td><p id="profilename"> </p></td></tr>
+  			<tr><td><strong>Age:</strong></td><td><p id="profileage"> </p></td></tr>  		
   		</table>
-    	<a href="#myPanel" class="ui-btn ui-icon-edit ui-btn-icon-left ui-btn-inline ui-mini ui-corner-all">Edit</a>
+    	<a href="#myPanel" class="ui-btn ui-icon-edit ui-btn-icon-left ui-btn-inline ui-mini ui-corner-all" id="profile_edit">Edit</a>
+    	
   	</div>
+  	
+  	
   	
   </div>
 
@@ -122,12 +125,48 @@
   	<div data-role="content" >
                 <div id="calendar"></div>
     </div>
+    
+    
   	
   </div>
 
 
   <div data-role="footer" data-position="fixed"></div>
 	
+</div>
+
+<div data-role="page"  id="reading" style="background: url(images/1554564_524919460940652_2126412582_n.jpg) no-repeat fixed center; background-size: 100% 100%;" >
+
+  <div data-role="header" data-position="fixed" data-fullscreen="true" class="text-center" >
+  		<img src="icon2.png" style="width: 55px; float:left; display:inline;"><p style="float: left;">&nbsp;&nbsp;Livet Wellness<p>
+  </div>
+
+  <div data-role="main" class="ui-content text-center">
+  	
+  	<div style="background-color:rgba(255,255,255,0.75); width: 80%; margin-left: 10%; margin-top: 15%; border-radius: 10px; text-align: center;">
+  		<br>
+  		<form>
+		<div style="max-width: 400px; margin: auto; background: #eee; padding: 30px;">
+          <h3>Add Reading</h3>
+          <label for="reading_type">Type</label>
+          <select name="reading_type" id="type">
+          		<option value="Weight">Weight</option>
+          		<option value="Blood Sugar">Blood Sugar</option>
+          </select>
+          <label for="reading_value">Value</label>
+          <input type="range" name="reading_value" id="reading_value" value="150" min="0" max="300">
+          <a id="reading_save" class="ui-btn ui-icon-edit ui-btn-icon-left ui-btn-inline ui-mini ui-corner-all" href="#calendaring">Save</a>
+          
+        </div>
+        </form>
+    </div>
+       
+        
+    	
+  	</div>
+  	
+  <div data-role="footer" data-position="fixed"></div>
+  
 </div> 
 
  
