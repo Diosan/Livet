@@ -146,18 +146,19 @@
   	<div style="background-color:rgba(255,255,255,0.75); width: 80%; margin-left: 10%; margin-top: 15%; border-radius: 10px; text-align: center;">
   		<br>
   		<form>
+  			
 		<div style="max-width: 400px; margin: auto; background: #eee; padding: 30px;">
           <h3>Add Reading</h3>
           <label for="reading_type">Type</label>
-          <select name="reading_type" id="type">
+          <select name="reading_type" id="reading_type">
           		<option value="Weight">Weight</option>
           		<option value="Blood Sugar">Blood Sugar</option>
           </select>
           <label for="reading_value">Value</label>
           <input type="range" name="reading_value" id="reading_value" value="150" min="0" max="300">
-          <a id="reading_save" class="ui-btn ui-icon-edit ui-btn-icon-left ui-btn-inline ui-mini ui-corner-all" href="#calendaring">Save</a>
-          
+          <a id="reading_save" class="ui-btn ui-icon-edit ui-btn-icon-left ui-btn-inline ui-mini ui-corner-all" href="#calendaring">Save</a>         
         </div>
+        
         </form>
     </div>
        
@@ -169,6 +170,55 @@
   
 </div> 
 
+
+
+<div data-role="page"  id="journal" style="background: url(images/1554564_524919460940652_2126412582_n.jpg) no-repeat fixed center; background-size: 100% 100%;" >
+
+  <div data-role="header" data-position="fixed" data-fullscreen="true" class="text-center" >
+  		<img src="icon2.png" style="width: 55px; float:left; display:inline;"><p style="float: left;">&nbsp;&nbsp;Livet Wellness<p>
+  </div>
+
+  <div data-role="main" class="ui-content text-center">
+  	
+  	<div style="background-color:rgba(255,255,255,0.75); width: 80%; margin-left: 10%; margin-top: 15%; border-radius: 10px; text-align: center;">
+  		<br>
+  		<form>
+		<div style="max-width: 400px; margin: auto; background: #eee; padding: 30px;">
+          <h3>Add Journal</h3>
+          
+          <div class="ui-field-contain">
+		    <label for="select-custom-18">Mood</label>
+		    <select name="journal_mood" id="journal_mood" data-native-menu="false">
+		        <option value="Happy" data-image="img/emoticons/PNG/icontexto-emoticons-03-032x032.png">Happy</option>
+		        <option value="Sick" data-image="img/emoticons/PNG/icontexto-emoticons-11-032x032.png">Sick</option>
+		        <option value="Sad" data-image="img/emoticons/PNG/icontexto-emoticons-13-032x032.png">Sad</option>
+		     </select>
+		  </div>
+		  
+		  <div class="ui-field-contain">
+		    <label for="select-custom-18">Note</label>
+		    <textarea cols="40" rows="8" name="journal_note" id="journal_note" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" data-clear-btn="true"></textarea>
+		  </div>
+          
+          <a id="journal_save" class="ui-btn ui-icon-edit ui-btn-icon-left ui-btn-inline ui-mini ui-corner-all" href="#calendaring">Save</a>
+          
+          
+          
+        </div>
+        
+        </form>
+    </div>
+       
+        
+    	
+  	</div>
+  	
+  <div data-role="footer" data-position="fixed"></div>
+  
+</div> 
+
+
+
  
         
         <script type="text/javascript" src="cordova.js"></script>
@@ -177,6 +227,7 @@
         <script src="jquery-1.11.2.min.js"></script>
         <script type="text/javascript" src="jquery.mobile-1.4.5.min.js"></script>
         <script type="text/javascript" src="jw-jqm-cal.js"></script>
+        <script type="text/javascript" src="js/decode.js"></script>
         <script type="text/javascript">
         	
         	
