@@ -17,7 +17,7 @@ if (localStorage.getItem("readings") == null) {
 	
 	//alert('Reading NOT Empty');
 	
-	//localStorage.removeItem('readings');
+	localStorage.removeItem('readings');
 	
 	reading = { 'summary' : '<center><b>Today<b></center>', 'begin' : new Date(y, m, d), 'end' : new Date(y, m, d) };
 	
