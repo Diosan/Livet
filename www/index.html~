@@ -81,11 +81,11 @@
       	  <label for="weight">Weight (Pounds):</label>
       	  <input type="range" name="profile_weight" id="profile_weight" value="160" min="0" max="300">
 	  <label for=profile_breakfast">Breakfast Time:</label>
-	  <input type="text" name="profile_breakfast" data-role="datebox" data-options='{"mode":"timebox"}'>
+	  <input type="text" name="profile_breakfast" id="profile_breakfast" data-role="datebox" data-options='{"mode":"timebox"}'>
 	  <label for=profile_lunch">Lunch Time:</label>
-	  <input type="text" name="profile_lunch" data-role="datebox" data-options='{"mode":"timebox"}'>
+	  <input type="text" name="profile_lunch" id="profile_lunch" data-role="datebox" data-options='{"mode":"timebox"}'>
 	  <label for=profile_dinner">Dinner Time:</label>
-	  <input type="text" name="profile_dinner" data-role="datebox" data-options='{"mode":"timebox"}'>
+	  <input type="text" name="profile_dinner" id="profile_dinner" data-role="datebox" data-options='{"mode":"timebox"}'>
       	  <label for="profile_sugar">Blood Sugar:</label>
       	  <input type="range" name="profile_sugar" id="profile_sugar" value="140" min="0" max="300">
       	  <label for="profile_sugar_fasting">Blood Sugar (Fasting):</label>
@@ -242,8 +242,10 @@
   		<img src="icon2.png" style="width: 55px; float:left; display:inline;"><p style="float: left;">&nbsp;&nbsp;Livet Wellness<p>
   </div>
 
-	<!--Div that will hold the pie chart-->
-    <div id="chart_div"></div>
+    <!--Div that will hold the pie chart-->
+    <div style="background-color:rgba(255,255,255,0.75); width: 80%; margin-left: 10%; margin-top: 15%; border-radius: 10px; text-align: center;">
+    	<div id="chart_div"></div>
+    </div>
 
    <div data-role="main" class="ui-content text-center">
     	<div data-role="footer" data-position="fixed"></div>
@@ -343,7 +345,7 @@
                        'height':300};
 
         // Instantiate and draw our chart, passing in some options.
-        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
         chart.draw(data, options);
       }
     </script>

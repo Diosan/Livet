@@ -242,8 +242,10 @@
   		<img src="icon2.png" style="width: 55px; float:left; display:inline;"><p style="float: left;">&nbsp;&nbsp;Livet Wellness<p>
   </div>
 
-	<!--Div that will hold the pie chart-->
-    <div id="chart_div"></div>
+    <!--Div that will hold the pie chart-->
+    <div style="background-color:rgba(255,255,255,0.75); width: 80%; margin-left: 10%; margin-top: 15%; border-radius: 10px; text-align: center;">
+    	<div id="chart_div"></div>
+    </div>
 
    <div data-role="main" class="ui-content text-center">
     	<div data-role="footer" data-position="fixed"></div>
@@ -311,7 +313,13 @@
         </script>
         <script type="text/javascript" src="js/livet.js"></script>
 
-	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+        
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+
+		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type="text/javascript">
 
       // Load the Visualization API and the piechart package.
@@ -343,14 +351,10 @@
                        'height':300};
 
         // Instantiate and draw our chart, passing in some options.
-        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
         chart.draw(data, options);
       }
     </script>
-        
-        <script type="text/javascript">
-            app.initialize();
-        </script>
         
     </body>
 </html>
