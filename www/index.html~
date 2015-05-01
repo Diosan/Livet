@@ -39,6 +39,7 @@
         <link rel="stylesheet" type="text/css" href="Livet.min.css" />
         <link rel="stylesheet" type="text/css" href="css/livet.css" />
         
+	
         
         
         <title>Livet Wellness</title>
@@ -143,7 +144,7 @@
 
   <div data-role="main" class="ui-content text-center">
   	
-  	<div style="background-color:rgba(255,255,255,0.75); width: 80%; margin-left: 10%; margin-top: 15%; border-radius: 10px; text-align: center; padding-bottom: 3%;">
+  	<div style="background-color:rgba(255,255,255,0.75); width: 80%; margin-left: 10%; margin-top: 15%; border-radius: 10px; text-align: center; padding-bottom: 2%;">
   		<br>
   		<form>
   			
@@ -161,7 +162,7 @@
         
         </form>
 
-	<div data-theme="a" data-form="ui-body-a" class="ui-body ui-body-a ui-corner-all" style="margin: 3%;" >
+	<div data-theme="a" data-form="ui-body-a" class="ui-body ui-body-a ui-corner-all" style="margin: 3%; text-transform: none;" >
 			<p>Body</p>
 			<p>
 				Sample text and <a data-form="ui-link-a" href="#" data-theme="a" class="ui-link">links</a>.
@@ -221,6 +222,22 @@
   	
   <div data-role="footer" data-position="fixed"></div>
   
+</div>
+
+<div data-role="page"  id="charts" style="background: url(images/1554564_524919460940652_2126412582_n.jpg) no-repeat fixed center; background-size: 100% 100%;" >
+
+   <div data-role="header" data-position="fixed" data-fullscreen="true" class="text-center" >
+  		<img src="icon2.png" style="width: 55px; float:left; display:inline;"><p style="float: left;">&nbsp;&nbsp;Livet Wellness<p>
+  </div>
+
+	<!--Div that will hold the pie chart-->
+    <div id="chart_div"></div>
+
+   <div data-role="main" class="ui-content text-center">
+    	<div data-role="footer" data-position="fixed"></div>
+   </div>
+
+
 </div> 
 
 
@@ -249,9 +266,73 @@
             		$(this).children("[data-role=navbar]").first().navbar();
             	});
         	});
+
+
+		// Wait for device API libraries to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    // device APIs are available
+    //
+    function onDeviceReady() {
+        // Empty
+    }
+
+    // alert dialog dismissed
+        function alertDismissed() {
+            // do something
+        }
+
+    // Show a custom alertDismissed
+    //
+    function showAlert() {
+        navigator.notification.alert(
+            'You are the winner!',  // message
+            alertDismissed,         // callback
+            'Game Over',            // title
+            'Done'                  // buttonName
+        );
+    }
         	
         </script>
         <script type="text/javascript" src="js/livet.js"></script>
+
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+
+      // Load the Visualization API and the piechart package.
+      google.load('visualization', '1.0', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart() {
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Topping');
+        data.addColumn('number', 'Slices');
+        data.addRows([
+          ['Mushrooms', 3],
+          ['Onions', 1],
+          ['Olives', 1],
+          ['Zucchini', 1],
+          ['Pepperoni', 2]
+        ]);
+
+        // Set chart options
+        var options = {'title':'How Much Pizza I Ate Last Night',
+                       'width':400,
+                       'height':300};
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
         
         <script type="text/javascript">
             app.initialize();
