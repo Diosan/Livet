@@ -17,7 +17,7 @@ if (localStorage.getItem("readings") == null) {
 	
 	//alert('Reading NOT Empty');
 	
-	localStorage.removeItem('readings');
+	//localStorage.removeItem('readings');
 	
 	reading = { 'summary' : '<center><b>Today<b></center>', 'begin' : new Date(y, m, d), 'end' : new Date(y, m, d) };
 	
@@ -194,17 +194,26 @@ $(document).on("pagecreate", function(){
 
 
 function saveProfile() {
+	alert($('#profile_breakfast').val());
 	localStorage.setItem("name", $('#profile_name').val());
 	localStorage.setItem("age", $('#profile_age').val() + " years");
 	localStorage.setItem("weight", $('#profile_weight').val());
+	localStorage.setItem("breakfast", $('#profile_breakfast').val());
+	localStorage.setItem("lunch", $('#profile_lunch').val());
+	localStorage.setItem("dinner", $('#profile_dinner').val());
 	localStorage.setItem("sugar", $('#profile_sugar').val());
-	localStorage.setItem("sugar_fasting", $('#sugar_fasting').val());
+	localStorage.setItem("sugar_fasting", $('#profile_sugar_fasting').val());
 }
 
 function setProfile() {
+
+	//alert('Setting profile field');
 	
 	setProfilefield('name');
 	setProfilefield('age');
+	setProfilefield('breakfast');
+	setProfilefield('lunch');
+	setProfilefield('dinner');
 	//setProfilefield('weight');
 	//setProfilefield('sugar');
 	//setProfilefield('sugar_fasting');
@@ -218,7 +227,7 @@ function setProfilefield(fieldName) {
 		$('#profile' + fieldName).html('');
 		//$('#profile_' + fieldName).val('');
 	} else {
-		//alert('field is NOT empty');
+		//alert(fieldName + ' field is NOT empty');
 		$('#profile' + fieldName).html(localStorage.getItem(fieldName));
 		$('#profile_' + fieldName).val(localStorage.getItem(fieldName));
 		//if ($('#profile_' + fieldName).attr('type') == 'range') {
