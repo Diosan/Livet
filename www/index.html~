@@ -150,6 +150,7 @@
   			
 		<div style="max-width: 400px; margin: auto; background: #eee; padding: 30px;">
           <h3>Add Reading</h3>
+	  <p><a href="#" onclick="showAlert(); return false;">Show Alert</a></p>
           <label for="reading_type">Type</label>
           <select name="reading_type" id="reading_type">
           		<option value="Weight">Weight</option>
