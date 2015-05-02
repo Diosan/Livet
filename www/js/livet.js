@@ -194,7 +194,7 @@ $(document).on("pagecreate", function(){
 
 
 function saveProfile() {
-	alert($('#profile_breakfast').val());
+	//alert($('#profile_breakfast').val());
 	localStorage.setItem("name", $('#profile_name').val());
 	localStorage.setItem("age", $('#profile_age').val() + " years");
 	localStorage.setItem("weight", $('#profile_weight').val());

@@ -283,8 +283,8 @@ function createNotifications() {
 
 	if (Math.abs(theDate.getHours())==breakHour&&Math.abs(theDate.getMinutes())==breakMinute) {
 		this.focus();
-		clearInterval(breakInt)
-		alert(breakMessage)
+		clearInterval(breakInt);
+		alert(breakMessage);
 	}
 
 	var breakInt=setInterval("breakTime()",58000);
