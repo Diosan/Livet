@@ -175,9 +175,9 @@
         </form>
 
 	<div data-theme="a" data-form="ui-body-a" class="ui-body ui-body-a ui-corner-all" style="margin: 3%; text-transform: none;" >
-			<p>Body</p>
-			<p>
-				Sample text and <a data-form="ui-link-a" href="#" data-theme="a" class="ui-link">links</a>.
+			<div style="text-align: center; width: 100%;"><strong>Dr Livet Tips</strong></div>
+			<img src="img/livet1.jpg" style="width: 10%; float: left; margin-right: 15%;" >
+			<p style="width: 75%; float: left; color: green;" >“The body needs specific vitamins and minerals to be at optimal performance, and a Livet lifestyle introduces these through nutrition, herbal supplements, therapeutic treatments and lifestyle changes. A Livet is a holistic lifestyle centred on the natural balance of mental, physical, spiritual and emotional aspects.”
 			</p>
 	</div>
 
@@ -243,7 +243,7 @@
   </div>
 
     <!--Div that will hold the pie chart-->
-    <div style="background-color:rgba(255,255,255,0.75); width: 80%; margin-left: 10%; margin-top: 15%; border-radius: 10px; text-align: center;">
+    <div style="background-color:rgba(255,255,255,0.75); width: 100%; margin-top: 15%; text-align: center;">
     	<div id="chart_div"></div>
     </div>
 
@@ -303,9 +303,9 @@
     //
     function showAlert() {
         navigator.notification.alert(
-            'You are the winner!',  // message
+            'Time for lunch!',  // message
             alertDismissed,         // callback
-            'Game Over',            // title
+            'Whats for Lunch ?',            // title
             'Done'                  // buttonName
         );
     }
@@ -335,18 +335,18 @@
 
         // Create the data table.
         var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Topping');
-        data.addColumn('number', 'Slices');
+        data.addColumn('string', 'Mood');
+        data.addColumn('number', 'Journal');
         data.addRows([
-          ['Mushrooms', 3],
-          ['Onions', 1],
-          ['Olives', 1],
-          ['Zucchini', 1],
-          ['Pepperoni', 2]
+          ['Happy', 10],
+          ['Depressed', 3],
+          ['Sick', 4],
+          ['Tired', 6],
+          ['Relaxed', 7]
         ]);
 
         // Set chart options
-        var options = {'title':'How Much Pizza I Ate Last Night',
+        var options = {'title':'My mood for the last 30 days',
                        'width':400,
                        'height':300};
 

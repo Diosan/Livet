@@ -265,10 +265,30 @@ function setupCalendar() {
     		$( this ).decHTML();
   			//alert($(this).html());
     	});	
-    });
-    
-    
-    
+    });    
+}
+
+
+
+function createNotifications() {
+
+	/* Set Break Hour in 24hr Notation */
+	var breakHour=9;
+	/* Set Break Minute */
+	var breakMinute=5;
+	/* Set Break Message */
+	var breakMessage="Reports! Take Your Break!";
+
+	var theDate=new Date()
+
+	if (Math.abs(theDate.getHours())==breakHour&&Math.abs(theDate.getMinutes())==breakMinute) {
+		this.focus();
+		clearInterval(breakInt)
+		alert(breakMessage)
+	}
+
+	var breakInt=setInterval("breakTime()",58000);
+
 }
 
 	
