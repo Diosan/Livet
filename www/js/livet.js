@@ -203,6 +203,7 @@ function saveProfile() {
 	localStorage.setItem("dinner", $('#profile_dinner').val());
 	localStorage.setItem("sugar", $('#profile_sugar').val());
 	localStorage.setItem("sugar_fasting", $('#profile_sugar_fasting').val());
+	
 }
 
 function setProfile() {
@@ -290,5 +291,19 @@ function createNotifications() {
 	var breakInt=setInterval("breakTime()",58000);
 
 }
+
+function calendar_events(){
+ var startDate = new Date(2014,4,31,18,30,0,0,0); // beware: month 0 = january, 11 = december
+  var endDate = new Date(2014,4,31,19,30,0,0,0);
+  var title = "Skype meeting With Lead";
+ //var location = "myleads.html";
+  var notes = "Need to do a skype meeting with the lead.";
+  var success = function(message) { alert("Success: " + JSON.stringify(message)); };
+  var error = function(message) { alert("Error: " + message); };
+  // window.plugins.calendar.listEventsInRange(startDate,endDate,success,error);
+
+//  window.plugins.calendar.createCalendar(calendarName,success,error);
+  window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,success,error);
+ }
 
 	

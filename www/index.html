@@ -55,6 +55,7 @@
   </div>
   
   <div data-role="main" class="ui-content">
+  	
   </div>
 
   <div data-role="footer" data-position="fixed">
@@ -107,6 +108,7 @@
   	
   	<div style="background-color:rgba(255,255,255,0.75); width: 80%; margin-left: 10%; margin-top: 15%; border-radius: 10px; text-align: center;">
   		<br>
+  		<a href="#craving">Craving</a>
   		<table class="text-left ui-responsive" style="margin: auto;" >
   			<tr><td><strong>Name:</strong></td><td><p id="profilename"> </p></td></tr>
   			<tr><td><strong>Age:</strong></td><td><p id="profileage"> </p></td></tr>
@@ -178,6 +180,52 @@
 			<div style="text-align: center; width: 100%;"><strong>Dr Livet Tips</strong></div>
 			<img src="img/livet1.jpg" style="width: 10%; float: left; margin-right: 15%;" >
 			<p style="width: 75%; float: left; color: green;" >“The body needs specific vitamins and minerals to be at optimal performance, and a Livet lifestyle introduces these through nutrition, herbal supplements, therapeutic treatments and lifestyle changes. A Livet is a holistic lifestyle centred on the natural balance of mental, physical, spiritual and emotional aspects.”
+			</p>
+	</div>
+
+    </div>        
+    	
+  	</div>
+  	
+  <div data-role="footer" data-position="fixed"></div>
+  
+</div>
+
+<div data-role="page"  id="craving" style="background: url(images/1554564_524919460940652_2126412582_n.jpg) no-repeat fixed center; background-size: 100% 100%;" >
+
+  <div data-role="header" data-position="fixed" data-fullscreen="true" class="text-center" >
+  		<img src="icon2.png" style="width: 55px; float:left; display:inline;"><p style="float: left;">&nbsp;&nbsp;Livet Wellness<p>
+  </div>
+
+  <div data-role="main" class="ui-content text-center">
+  	
+  	<div style="background-color:rgba(255,255,255,0.75); width: 80%; margin-left: 10%; margin-top: 15%; border-radius: 10px; text-align: center; padding-bottom: 2%;">
+  		<br>
+  		<form>
+  			
+		<div style="max-width: 400px; margin: auto; background: #eee; padding: 30px;">
+          <h3>What are you craving</h3>
+	  
+          <label for="craving_type">Craving</label>
+          <select name="craving_type" id="craving_type" multiple data-native-menu="false" >
+          		<option value="Bready">Bready</option>
+          		<option value="Chewy">Chewy</option>
+          		<option value="Bready">Creamy</option>
+          		<option value="Crunchy">Crunchy</option>
+          		<option value="Salty">Salty</option>
+          		<option value="Sugary">Sugary</option>
+          </select>
+          
+          <a id="craving_save" class="ui-btn ui-icon-edit ui-btn-icon-left ui-btn-inline ui-mini ui-corner-all" href="#calendaring">Save</a>
+                   
+        </div>
+        
+        </form>
+
+	<div data-theme="a" data-form="ui-body-a" class="ui-body ui-body-a ui-corner-all" style="margin: 3%; text-transform: none;" >
+			<div style="text-align: center; width: 100%;"><strong>Craving Tips</strong></div>
+			<img src="img/cravings.jpg" style="width: 10%; float: left; margin-right: 15%;" >
+			<p id="craving_tip" style="width: 75%; float: left; color: green;" >
 			</p>
 	</div>
 
