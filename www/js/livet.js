@@ -334,12 +334,12 @@ function calendar_events() {
  alert('adding calendar event');
 	
   var startDate = new Date();
-  startDate.setMinutes(startDate.getMinutes() + 20);
+  startDate.setMinutes(startDate.getMinutes() + 120);
   var endDate = startDate;
-  endDate.setMinutes(endDate.getMinutes() + 60);
-  var title = "Skype meeting With Lead";
+  endDate.setMinutes(endDate.getMinutes() + 160);
+  var title = "Lunch Time;
  //var location = "myleads.html";
-  var notes = "Need to do a skype meeting with the lead.";
+  var notes = "Please enter your craving.";
   var success = function(message) { alert("Success: " + JSON.stringify(message)); };
   var error = function(message) { alert("Error: " + message); };
   // window.plugins.calendar.listEventsInRange(startDate,endDate,success,error);
