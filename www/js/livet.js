@@ -337,7 +337,7 @@ function calendar_events() {
   startDate.setMinutes(startDate.getMinutes() + 120);
   var endDate = startDate;
   endDate.setMinutes(endDate.getMinutes() + 160);
-  var title = "Lunch Time;
+  var title = "Lunch Time";
  //var location = "myleads.html";
   var notes = "Please enter your craving.";
   var success = function(message) { alert("Success: " + JSON.stringify(message)); };
