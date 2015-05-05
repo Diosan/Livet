@@ -119,6 +119,42 @@ $(function() {
 		
 	});
 	
+	$('#craving_type').change( function() {
+		
+		var values = $(this).val();
+		var arrayLength = values.length;
+		$('#craving_tip').html('');
+		
+		for (var i = 0; i < arrayLength; i++) {
+			
+			switch (values[i]) {
+			    case 'Bready':
+			        $('#craving_tip').append('<strong>Sugary:</strong> Insecurity, soothes dissatisfaction. <br><br>');
+        		break;
+			    case 'Chewy':
+			        $('#craving_tip').append('<strong>Chewy:</strong> Relieves Tension stress, slowdown so you can unwind. <br><br>');
+		        break;
+			    case 'Creamy':
+			        $('#craving_tip').append('<strong>Creamy:</strong> Helps satisfy need to be nurtured and to receive comfort. <br><br>');
+		        break;
+			    case 'Crunchy':
+			        $('#craving_tip').append('<strong>Crunchy:</strong> Helps release anxiety pressure. <br><br>');
+		        break;
+			    case 'Salty':
+			        $('#craving_tip').append('<strong>Salty:</strong> Redirects anger, frustration and violence. <br><br>');
+		        break;
+			    case 'Sugary':
+			        $('#craving_tip').append('<strong>Sugary:</strong> Substitutes for missing Love, affection ability to give and receive love. <br><br>');
+		        break;
+			}
+			
+    		//alert(myStringArray[i]);
+    		//Do something
+		}	
+		//var values = $(this).val().split(',');
+		//alert('The first value in the array is ' + values[0]);
+	});
+	
 	
 	$('#journal_save').click( function() {
 		//var today = new Date();
@@ -203,6 +239,7 @@ function saveProfile() {
 	localStorage.setItem("dinner", $('#profile_dinner').val());
 	localStorage.setItem("sugar", $('#profile_sugar').val());
 	localStorage.setItem("sugar_fasting", $('#profile_sugar_fasting').val());
+	calendar_events();
 	
 }
 
@@ -292,9 +329,14 @@ function createNotifications() {
 
 }
 
-function calendar_events(){
- var startDate = new Date(2014,4,31,18,30,0,0,0); // beware: month 0 = january, 11 = december
-  var endDate = new Date(2014,4,31,19,30,0,0,0);
+function calendar_events() {
+
+ alert('adding calendar event');
+	
+  var startDate = new Date();
+  startDate.setMinutes(startDate.getMinutes() + 20);
+  var endDate = startDate;
+  endDate.setMinutes(endDate.getMinutes() + 60);
   var title = "Skype meeting With Lead";
  //var location = "myleads.html";
   var notes = "Need to do a skype meeting with the lead.";
@@ -304,6 +346,6 @@ function calendar_events(){
 
 //  window.plugins.calendar.createCalendar(calendarName,success,error);
   window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,success,error);
- }
+}
 
 	
