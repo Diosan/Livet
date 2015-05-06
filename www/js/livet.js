@@ -336,28 +336,30 @@ function calendar_events() {
 	
   var startDate = new Date();
   
-  startDate.setDate(startDate.getDate() + 1);
-  startDate.setHours(parseInt($('#profile_lunch').val().substring(0, 2)));
-  startDate.setMinutes(parseInt($('#profile_lunch').val().substring(3, 5)));
+  startDate.setMinutes(startDate.getMinutes() + 20);
+  
+  //startDate.setDate(startDate.getDate() + 1);
+  ///startDate.setHours(parseInt($('#profile_lunch').val().substring(0, 2)));
+  //startDate.setMinutes(parseInt($('#profile_lunch').val().substring(3, 5)));
   
   alert(startDate.toString());
   
   
   var endDate = startDate;
-  endDate.setMinutes(endDate.getMinutes() + 60);
+  endDate.setMinutes(endDate.getMinutes() + 80);
   var title = "Lunch Time";
   var location = "Unknown";
-  var notes = 'Please enter your <a href="meetime://craving">craving</a>';
+  var notes = 'Please enter your craving';
   var success = function(message) { alert("Success: " + JSON.stringify(message)); };
   var error = function(message) { alert("Error: " + message); };
   
 
-  var calOptions = window.plugins.calendar.getCalendarOptions();
+  //var calOptions = window.plugins.calendar.getCalendarOptions();
   
-  calOptions.recurrence = "daily"; // supported are: daily, weekly, monthly, yearly
-  eventEnd = startDate;
-  eventEnd.setFullYear(startDate.getFullYear() + 1);
-  calOptions.recurrenceEndDate = eventEnd;
+  //calOptions.recurrence = "daily"; // supported are: daily, weekly, monthly, yearly
+  //eventEnd = startDate;
+  //eventEnd.setFullYear(startDate.getFullYear() + 1);
+  //calOptions.recurrenceEndDate = eventEnd;
   
   
   //alert(startDate.toString());
