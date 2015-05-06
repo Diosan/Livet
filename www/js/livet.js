@@ -338,7 +338,8 @@ function calendar_events() {
   
   startDate.setMinutes(startDate.getMinutes() + 20);
   
-  //startDate.setDate(startDate.getDate() + 1);
+  startDate.setDate(startDate.getDate() + 1);
+  alert(parseInt(startDate.getDate()));
   ///startDate.setHours(parseInt($('#profile_lunch').val().substring(0, 2)));
   //startDate.setMinutes(parseInt($('#profile_lunch').val().substring(3, 5)));
   
