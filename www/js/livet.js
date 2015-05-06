@@ -317,7 +317,7 @@ function createNotifications() {
 	/* Set Break Message */
 	var breakMessage="Reports! Take Your Break!";
 
-	var theDate=new Date()
+	var theDate=new Date();
 
 	if (Math.abs(theDate.getHours())==breakHour&&Math.abs(theDate.getMinutes())==breakMinute) {
 		this.focus();
@@ -331,21 +331,31 @@ function createNotifications() {
 
 function calendar_events() {
 
- alert('adding calendar event');
+  alert('adding calendar event');
+  alert($('#profile_lunch').val());
 	
   var startDate = new Date();
-  startDate.setMinutes(startDate.getMinutes() + 120);
+  startDate.setHours(parseInt($('#profile_lunch').val().substring(0, 2)));
+  startDate.setMinutes(parseInt($('#profile_lunch').val().substring(3, 2)));
   var endDate = startDate;
-  endDate.setMinutes(endDate.getMinutes() + 160);
+  endDate.setMinutes(endDate.getMinutes() + 30);
   var title = "Lunch Time";
   var location = "Unknown";
-  var notes = "Please enter your <a href='meetime://addcraving'>craving.</a>";
+  var notes = 'Please enter your <a href="meetime://craving">craving</a>';
   var success = function(message) { alert("Success: " + JSON.stringify(message)); };
   var error = function(message) { alert("Error: " + message); };
   // window.plugins.calendar.listEventsInRange(startDate,endDate,success,error);
 
+  var calOptions = window.plugins.calendar.getCalendarOptions();
+  
+  calOptions.recurrence = "daily"; // supported are: daily, weekly, monthly, yearly
+  eventEnd = startDate;
+  eventEnd.setFullYear(startDate.getFullYear() + 1);
+  calOptions.recurrenceEndDate = eventEnd;
+
   //  window.plugins.calendar.createCalendar(calendarName,success,error);
-  window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,success,error);
+  window.plugins.calendar.createEventWithOptions(title,location,notes,startDate,endDate,calOptions,success,error);
+  
 }
 
 	
