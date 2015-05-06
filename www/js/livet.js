@@ -332,11 +332,13 @@ function createNotifications() {
 function calendar_events() {
 
   alert('adding calendar event');
-  alert($('#profile_lunch').val());
+  //alert($('#profile_lunch').val());
 	
   var startDate = new Date();
   startDate.setHours(parseInt($('#profile_lunch').val().substring(0, 2)));
-  startDate.setMinutes(parseInt($('#profile_lunch').val().substring(3, 2)));
+  startDate.setMinutes(parseInt($('#profile_lunch').val().substring(3, 5)));
+  
+  
   var endDate = startDate;
   endDate.setMinutes(endDate.getMinutes() + 30);
   var title = "Lunch Time";
@@ -344,7 +346,7 @@ function calendar_events() {
   var notes = 'Please enter your <a href="meetime://craving">craving</a>';
   var success = function(message) { alert("Success: " + JSON.stringify(message)); };
   var error = function(message) { alert("Error: " + message); };
-  // window.plugins.calendar.listEventsInRange(startDate,endDate,success,error);
+  
 
   var calOptions = window.plugins.calendar.getCalendarOptions();
   
@@ -352,6 +354,9 @@ function calendar_events() {
   eventEnd = startDate;
   eventEnd.setFullYear(startDate.getFullYear() + 1);
   calOptions.recurrenceEndDate = eventEnd;
+  
+  
+  //alert(startDate.toString());
 
   //  window.plugins.calendar.createCalendar(calendarName,success,error);
   window.plugins.calendar.createEventWithOptions(title,location,notes,startDate,endDate,calOptions,success,error);
