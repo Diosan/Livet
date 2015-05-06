@@ -338,13 +338,13 @@ function calendar_events() {
   var endDate = startDate;
   endDate.setMinutes(endDate.getMinutes() + 160);
   var title = "Lunch Time";
- //var location = "myleads.html";
-  var notes = "Please enter your craving.";
+  var location = "Unknown";
+  var notes = "Please enter your <a href='meetime://addcraving'>craving.</a>";
   var success = function(message) { alert("Success: " + JSON.stringify(message)); };
   var error = function(message) { alert("Error: " + message); };
   // window.plugins.calendar.listEventsInRange(startDate,endDate,success,error);
 
-//  window.plugins.calendar.createCalendar(calendarName,success,error);
+  //  window.plugins.calendar.createCalendar(calendarName,success,error);
   window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,success,error);
 }
 
