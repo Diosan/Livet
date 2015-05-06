@@ -346,7 +346,7 @@ function calendar_events() {
   alert(startDate.toString());
   
   
-  var endDate = startDate;
+  var endDate = new Date();
   endDate.setMinutes(endDate.getMinutes() + 80);
   var title = "Lunch Time";
   var location = "Unknown";
