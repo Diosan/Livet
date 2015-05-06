@@ -344,7 +344,7 @@ function calendar_events() {
   
   
   var endDate = startDate;
-  endDate.setMinutes(endDate.getMinutes() + 30);
+  endDate.setMinutes(endDate.getMinutes() + 60);
   var title = "Lunch Time";
   var location = "Unknown";
   var notes = 'Please enter your <a href="meetime://craving">craving</a>';
@@ -363,7 +363,7 @@ function calendar_events() {
   //alert(startDate.toString());
 
   //  window.plugins.calendar.createCalendar(calendarName,success,error);
-  window.plugins.calendar.createEventWithOptions(title,location,notes,startDate,endDate,calOptions,success,error);
+  window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,success,error);
   
 }
 
