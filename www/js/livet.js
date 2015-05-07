@@ -361,6 +361,7 @@ function calendar_events() {
   var deviceOSVersion = device.version;
   
   alert('deviceOSVersion is ' + deviceOSVersion );
+  alert(parseFloat( deviceOSVersion.substring(2, 5)));
   
   if( parseInt( deviceOSVersion, 10 ) >= 4 )
   {
