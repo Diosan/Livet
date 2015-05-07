@@ -340,14 +340,14 @@ function calendar_events() {
   
   //startDate.setDate(startDate.getDate() + 1);
   //alert(parseInt(startDate.getDate()));
-  startDate.setHours(parseInt($('#profile_lunch').val().substring(0, 2)));
-  startDate.setMinutes(parseInt($('#profile_lunch').val().substring(3, 5)));
+  //startDate.setHours(parseInt($('#profile_lunch').val().substring(0, 2)));
+  //startDate.setMinutes(parseInt($('#profile_lunch').val().substring(3, 5)));
   
   alert(startDate.toString());
   
   
-  var endDate = startDate;
-  endDate.setMinutes(endDate.getMinutes() + 15);
+  var endDate = new Date();
+  //endDate.setMinutes(endDate.getMinutes() + 15);
   var title = "Lunch Time";
   var location = "Unknown";
   var notes = 'Please enter your craving';
@@ -355,18 +355,18 @@ function calendar_events() {
   var error = function(message) { alert("Error: " + message); };
   
 
-  var calOptions = window.plugins.calendar.getCalendarOptions();
+  //var calOptions = window.plugins.calendar.getCalendarOptions();
   
-  calOptions.recurrence = "daily"; // supported are: daily, weekly, monthly, yearly
-  eventEnd = startDate;
-  eventEnd.setFullYear(startDate.getFullYear() + 1);
-  calOptions.recurrenceEndDate = eventEnd;
+  //calOptions.recurrence = "daily"; // supported are: daily, weekly, monthly, yearly
+  //eventEnd = startDate;
+  //eventEnd.setFullYear(startDate.getFullYear() + 1);
+  //calOptions.recurrenceEndDate = eventEnd;
   
   
   //alert(startDate.toString());
 
   //  window.plugins.calendar.createCalendar(calendarName,success,error);
-  window.plugins.calendar.createEventWithOptions(title,location,notes,startDate,endDate,calOptions,success,error);
+  window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,success,error);
   
 }
 
