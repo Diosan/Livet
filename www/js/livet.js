@@ -344,10 +344,11 @@ function calendar_events() {
   startDate.setMinutes(parseInt($('#profile_lunch').val().substring(3, 5)));
   
   
-  var endDate = startDate();
+  var endDate = new Date;
   //endDate.setMinutes(endDate.getMinutes() + 140);
-  //endDate.setHours(parseInt($('#profile_lunch').val().substring(0, 2)));
-  endDate.setMinutes(endDate.getMinutes() + 30);
+  endDate.setHours(parseInt($('#profile_lunch').val().substring(0, 2)));
+  endDate.setMinutes(parseInt($('#profile_lunch').val().substring(3, 5)) + 30);
+  
   
   alert(startDate.toString());
   alert(endDate.toString());
