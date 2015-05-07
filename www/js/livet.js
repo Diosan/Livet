@@ -358,6 +358,7 @@ function calendar_events() {
   
 
   var calOptions = window.plugins.calendar.getCalendarOptions();
+  var deviceOSVersion = device.version;
   
   alert('deviceOSVersion is ' + deviceOSVersion );
   
