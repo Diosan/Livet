@@ -347,7 +347,7 @@ function calendar_events() {
   var endDate = startDate();
   //endDate.setMinutes(endDate.getMinutes() + 140);
   //endDate.setHours(parseInt($('#profile_lunch').val().substring(0, 2)));
-  endDate.setMinutes(startDate.getMinutes() + 30);
+  endDate.setMinutes(endDate.getMinutes() + 30);
   
   alert(startDate.toString());
   alert(endDate.toString());
