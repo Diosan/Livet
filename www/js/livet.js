@@ -380,12 +380,12 @@ function create_lunch() {
     			startDate.setDate(startDate.getDate() + 1);
     			endDate.setDate(endDate.getDate() + 1);
     			
-    			if (i < 5) {
-    				success = function(message) {};
-    				alert('Iterator i is ' + parseInt(i));
-    			} else {
-    				success = function(message) { alert("Success: " + JSON.stringify(message)); };
-    			}
+    			//if (i < 5) {
+    			//	success = function(message) {};
+    			//	alert('Iterator i is ' + parseInt(i));
+    			//} else {
+    			//	success = function(message) { alert("Success: " + JSON.stringify(message)); };
+    			//}
     				
     			window.plugins.calendar.createEventWithOptions(title,location,notes,startDate,endDate,calOptions,success,error);
 			}
