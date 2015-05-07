@@ -333,10 +333,10 @@ function calendar_events() {
 
   alert('adding calendar event');
   //alert($('#profile_lunch').val());
-	
+  	
   var startDate = new Date();
   
-  startDate.setMinutes(startDate.getMinutes() + 20);
+  //startDate.setMinutes(startDate.getMinutes() + 20);
   
   startDate.setDate(startDate.getDate() + 1);
   alert(parseInt(startDate.getDate()));
@@ -347,7 +347,7 @@ function calendar_events() {
   
   
   var endDate = new Date();
-  endDate.setMinutes(endDate.getMinutes() + 80);
+  //endDate.setMinutes(endDate.getMinutes() + 80);
   var title = "Lunch Time";
   var location = "Unknown";
   var notes = 'Please enter your craving';
