@@ -336,18 +336,20 @@ function calendar_events() {
   	
   var startDate = new Date();
   
-  //startDate.setMinutes(startDate.getMinutes() + 20);
+  startDate.setMinutes(startDate.getMinutes() + 20);
   
   //startDate.setDate(startDate.getDate() + 1);
   //alert(parseInt(startDate.getDate()));
   //startDate.setHours(parseInt($('#profile_lunch').val().substring(0, 2)));
   //startDate.setMinutes(parseInt($('#profile_lunch').val().substring(3, 5)));
   
-  alert(startDate.toString());
-  
   
   var endDate = new Date();
-  //endDate.setMinutes(endDate.getMinutes() + 15);
+  endDate.setMinutes(endDate.getMinutes() + 80);
+  
+  alert(startDate.toString());
+  alert(endDate.toString());
+  
   var title = "Lunch Time";
   var location = "Unknown";
   var notes = 'Please enter your craving';
