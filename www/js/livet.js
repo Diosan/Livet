@@ -357,18 +357,18 @@ function calendar_events() {
   var error = function(message) { alert("Error: " + message); };
   
 
-  //var calOptions = window.plugins.calendar.getCalendarOptions();
+  var calOptions = window.plugins.calendar.getCalendarOptions();
   
   //calOptions.recurrence = "daily"; // supported are: daily, weekly, monthly, yearly
-  //eventEnd = startDate;
-  //eventEnd.setFullYear(startDate.getFullYear() + 1);
+  //eventEnd = new Date();
+  //eventEnd.setFullYear(eventEnd.getFullYear() + 1);
   //calOptions.recurrenceEndDate = eventEnd;
   
   
   //alert(startDate.toString());
 
   //  window.plugins.calendar.createCalendar(calendarName,success,error);
-  window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,success,error);
+  window.plugins.calendar.createEventWithOptions(title,location,notes,startDate,endDate,calOptions,success,error);
   
 }
 
