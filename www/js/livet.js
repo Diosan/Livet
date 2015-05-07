@@ -359,6 +359,13 @@ function calendar_events() {
 
   var calOptions = window.plugins.calendar.getCalendarOptions();
   
+  alert('deviceOSVersion is ' + deviceOSVersion );
+  
+  if( parseInt( deviceOSVersion, 10 ) >= 4 )
+  {
+    	alert('Android version is higher than 4');
+  }
+  
   //calOptions.recurrence = "daily"; // supported are: daily, weekly, monthly, yearly
   //eventEnd = new Date();
   //eventEnd.setFullYear(eventEnd.getFullYear() + 1);
