@@ -366,7 +366,7 @@ function calendar_events() {
   //alert(startDate.toString());
 
   //  window.plugins.calendar.createCalendar(calendarName,success,error);
-  window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,calOptions,success,error);
+  window.plugins.calendar.createEventWithOptions(title,location,notes,startDate,endDate,calOptions,success,error);
   
 }
 
