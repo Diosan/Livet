@@ -336,16 +336,18 @@ function calendar_events() {
   	
   var startDate = new Date();
   
-  startDate.setMinutes(startDate.getMinutes() + 80);
+  //startDate.setMinutes(startDate.getMinutes() + 80);
   
   //startDate.setDate(startDate.getDate() + 1);
   //alert(parseInt(startDate.getDate()));
-  //startDate.setHours(parseInt($('#profile_lunch').val().substring(0, 2)));
-  //startDate.setMinutes(parseInt($('#profile_lunch').val().substring(3, 5)));
+  startDate.setHours(parseInt($('#profile_lunch').val().substring(0, 2)));
+  startDate.setMinutes(parseInt($('#profile_lunch').val().substring(3, 5)));
   
   
-  var endDate = new Date();
-  endDate.setMinutes(endDate.getMinutes() + 140);
+  var endDate = startDate();
+  //endDate.setMinutes(endDate.getMinutes() + 140);
+  //endDate.setHours(parseInt($('#profile_lunch').val().substring(0, 2)));
+  endDate.setMinutes(startDate.getMinutes() + 30);
   
   alert(startDate.toString());
   alert(endDate.toString());
