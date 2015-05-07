@@ -330,22 +330,21 @@ function createNotifications() {
 }
 
 function calendar_events() {
+	
+	create_lunch();
+	
+}
 
-  alert('adding calendar event');
-  //alert($('#profile_lunch').val());
+function create_lunch() {
+
+  alert('adding calendar events');
   	
-  var startDate = new Date();
-  
-  //startDate.setMinutes(startDate.getMinutes() + 80);
-  
-  //startDate.setDate(startDate.getDate() + 1);
-  //alert(parseInt(startDate.getDate()));
+  var startDate = new Date();  
   startDate.setHours(parseInt($('#profile_lunch').val().substring(0, 2)));
   startDate.setMinutes(parseInt($('#profile_lunch').val().substring(3, 5)));
   
   
   var endDate = new Date;
-  //endDate.setMinutes(endDate.getMinutes() + 140);
   endDate.setHours(parseInt($('#profile_lunch').val().substring(0, 2)));
   endDate.setMinutes(parseInt($('#profile_lunch').val().substring(3, 5)) + 30);
   
@@ -362,9 +361,6 @@ function calendar_events() {
 
   var calOptions = window.plugins.calendar.getCalendarOptions();
   var deviceOSVersion = device.version;
-  
-  //alert('deviceOSVersion is ' + deviceOSVersion );
-  //alert(parseFloat( deviceOSVersion.substring(2, 5)));
   
   if( parseInt( deviceOSVersion, 10 ) >= 4 )
   {
@@ -383,18 +379,19 @@ function calendar_events() {
     		for (var i = 0; i < 5; i++) {
     			startDate.setDate(startDate.getDate() + 1);
     			endDate.setDate(endDate.getDate() + 1);
+    			
+    			if (i < 5) {
+    				success = function(message) {};
+    				alert('Iterator i is ' + parseInt(i));
+    			} else {
+    				success = function(message) { alert("Success: " + JSON.stringify(message)); };
+    			}
+    				
     			window.plugins.calendar.createEventWithOptions(title,location,notes,startDate,endDate,calOptions,success,error);
 			}
 			
     	}
   }
-  
-  
-  
-  
-  //alert(startDate.toString());
-
-  //  window.plugins.calendar.createCalendar(calendarName,success,error);
   
   
 }
