@@ -364,7 +364,11 @@ function calendar_events() {
   
   if( parseInt( deviceOSVersion, 10 ) >= 4 )
   {
-    	alert('Android version is higher than 4');
+    	if( parseFloat( deviceOSVersion.substring(2, 5) ) >= 2.4 ) {
+    		alert('Version is less than 2.4');
+    	} else {
+    		alert('Version is greater than 2.4');
+    	};
   }
   
   //calOptions.recurrence = "daily"; // supported are: daily, weekly, monthly, yearly
