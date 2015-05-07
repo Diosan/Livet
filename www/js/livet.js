@@ -360,28 +360,39 @@ function calendar_events() {
   var calOptions = window.plugins.calendar.getCalendarOptions();
   var deviceOSVersion = device.version;
   
-  alert('deviceOSVersion is ' + deviceOSVersion );
-  alert(parseFloat( deviceOSVersion.substring(2, 5)));
+  //alert('deviceOSVersion is ' + deviceOSVersion );
+  //alert(parseFloat( deviceOSVersion.substring(2, 5)));
   
   if( parseInt( deviceOSVersion, 10 ) >= 4 )
   {
     	if( parseFloat( deviceOSVersion.substring(2, 5) ) >= 2.4 ) {
-    		alert('Version is less than 2.4');
+    		
+    		alert('Automatically creating events');
+    		calOptions.recurrence = "daily"; // supported are: daily, weekly, monthly, yearly
+		    eventEnd = new Date();
+		    eventEnd.setFullYear(eventEnd.getFullYear() + 1);
+		    calOptions.recurrenceEndDate = eventEnd;
+		    window.plugins.calendar.createEventWithOptions(title,location,notes,startDate,endDate,calOptions,success,error);
+
     	} else {
-    		alert('Version is greater than 2.4');
-    	};
+    		
+    		alert('Manually creating events');   		
+    		for (var i = 0; i < 5; i++) {
+    			startDate.setDate(startDate.getDate() + 1);
+    			endDate.setDate(endDate.getDate() + 1);
+    			window.plugins.calendar.createEventWithOptions(title,location,notes,startDate,endDate,calOptions,success,error);
+			}
+			
+    	}
   }
   
-  //calOptions.recurrence = "daily"; // supported are: daily, weekly, monthly, yearly
-  //eventEnd = new Date();
-  //eventEnd.setFullYear(eventEnd.getFullYear() + 1);
-  //calOptions.recurrenceEndDate = eventEnd;
+  
   
   
   //alert(startDate.toString());
 
   //  window.plugins.calendar.createCalendar(calendarName,success,error);
-  window.plugins.calendar.createEventWithOptions(title,location,notes,startDate,endDate,calOptions,success,error);
+  
   
 }
 
