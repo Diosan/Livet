@@ -375,13 +375,15 @@ function create_lunch() {
 
     	} else {
     		
-    		alert('Manually creating events');   		
+    		alert('Manually creating events');
+    		   		
     		for (var i = 0; i < 5; i++) {
+    			
     			startDate.setDate(startDate.getDate() + 1);
     			endDate.setDate(endDate.getDate() + 1);
     			
-    			if (i < 5) {
-    				success = function(message) { alert('success function set'); };
+    			if (i < 4) {
+    				success = function(message) { $('body').append(''); };
     				//alert('Iterator i is ' + parseInt(i));
     			} else {
     				success = function(message) { alert("Success: " + JSON.stringify(message)); };
