@@ -438,7 +438,7 @@ function create_breakfast() {
   //alert(startDate.toString());
   //alert(endDate.toString());
   
-  var title = "Lunch Time";
+  var title = "Breakfast Time";
   var location = "Unknown";
   var notes = 'Please enter your craving';
   var success = function(message) { alert("Lunch events created"); };
@@ -521,7 +521,7 @@ function create_dinner() {
   //alert(startDate.toString());
   //alert(endDate.toString());
   
-  var title = "Lunch Time";
+  var title = "Dinner Time";
   var location = "Unknown";
   var notes = 'Please enter your craving';
   var success = function(message) { alert("Lunch events created"); };
