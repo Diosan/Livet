@@ -360,10 +360,16 @@ function create_lunch() {
   
 
   var calOptions = window.plugins.calendar.getCalendarOptions();
-  var deviceOSVersion = device.version;
   
-  if( parseInt( deviceOSVersion, 10 ) >= 4 )
-  {
+  var deviceOSVersion = device.version;
+  var deviceOS;
+  
+  if(deviceOS = 'Android') {
+  	
+  	 alert('Device OS is Android');
+  
+  	 if( parseInt( deviceOSVersion, 10 ) >= 4 )
+  	 {
     	if( parseFloat( deviceOSVersion.substring(2, 5) ) >= 2.4 ) {
     		
     		alert('Automatically creating events');
@@ -393,8 +399,16 @@ function create_lunch() {
 			}
 			
     	}
-  }
-  
+  	  }
+   } else {
+   	  alert('Automatically creating events');
+      calOptions.recurrence = "daily"; // supported are: daily, weekly, monthly, yearly
+	  eventEnd = new Date();
+	  eventEnd.setFullYear(eventEnd.getFullYear() + 1);
+	  calOptions.recurrenceEndDate = eventEnd;
+	  window.plugins.calendar.createEventWithOptions(title,location,notes,startDate,endDate,calOptions,success,error);
+
+   } 
   
 }
 
