@@ -332,7 +332,10 @@ function createNotifications() {
 function calendar_events() {
 	
 	alert('adding calendar events');
+	create_breakfast();
 	create_lunch();
+	create_dinner();
+	
 	
 }
 
@@ -397,6 +400,173 @@ function create_lunch() {
     				//alert('Iterator i is ' + parseInt(i));
     			} else {
     				success = function(message) { alert("Lunch events created"); };
+    			}
+    				
+    			window.plugins.calendar.createEventWithOptions(title,location,notes,startDate,endDate,calOptions,success,error);
+			}
+			
+    	}
+  	  }
+  	  
+   } else {
+   	
+   	  //alert('Automatically creating events');
+      calOptions.recurrence = "daily"; // supported are: daily, weekly, monthly, yearly
+	  eventEnd = new Date();
+	  eventEnd.setFullYear(eventEnd.getFullYear() + 1);
+	  calOptions.recurrenceEndDate = eventEnd;
+	  calOptions.url = "meetime://craving";
+	  window.plugins.calendar.createEventWithOptions(title,location,notes,startDate,endDate,calOptions,success,error);
+
+   } 
+  
+}
+
+
+function create_breakfast() {
+  	
+  var startDate = new Date();  
+  startDate.setHours(parseInt($('#profile_breakfast').val().substring(0, 2)));
+  startDate.setMinutes(parseInt($('#profile_breakfast').val().substring(3, 5)));
+  
+  
+  var endDate = new Date;
+  endDate.setHours(parseInt($('#profile_breakfast').val().substring(0, 2)));
+  endDate.setMinutes(parseInt($('#profile_breakfast').val().substring(3, 5)) + 30);
+  
+  
+  //alert(startDate.toString());
+  //alert(endDate.toString());
+  
+  var title = "Lunch Time";
+  var location = "Unknown";
+  var notes = 'Please enter your craving';
+  var success = function(message) { alert("Lunch events created"); };
+  var error = function(message) { alert("Error: " + message); };
+  
+
+  var calOptions = window.plugins.calendar.getCalendarOptions();
+  
+  var deviceOSVersion = device.version;
+  var deviceOS;
+  
+  if(deviceOS = 'Android') {
+  	
+  	 //alert('Device OS is Android');
+  
+  	 if( parseInt( deviceOSVersion, 10 ) >= 4 )
+  	 {
+    	if( parseFloat( deviceOSVersion.substring(2, 5) ) >= 2.4 ) {
+    		
+    		//alert('Automatically creating events');
+    		calOptions.recurrence = "daily"; // supported are: daily, weekly, monthly, yearly
+		    eventEnd = new Date();
+		    eventEnd.setFullYear(eventEnd.getFullYear() + 1);
+		    calOptions.recurrenceEndDate = eventEnd;
+		    
+		    if( parseFloat( deviceOSVersion.substring(2, 5) ) >= 3.2 ) {
+		    	calOptions.url = "meetime://craving";	
+		    }
+		    
+		    window.plugins.calendar.createEventWithOptions(title,location,notes,startDate,endDate,calOptions,success,error);
+
+    	} else {
+    		
+    		//alert('Manually creating events');
+    		   		
+    		for (var i = 0; i < 5; i++) {
+    			
+    			startDate.setDate(startDate.getDate() + 1);
+    			endDate.setDate(endDate.getDate() + 1);
+    			
+    			if (i < 4) {
+    				success = function(message) { $('body').append(''); };
+    				//alert('Iterator i is ' + parseInt(i));
+    			} else {
+    				success = function(message) { alert("Breakfast events created"); };
+    			}
+    				
+    			window.plugins.calendar.createEventWithOptions(title,location,notes,startDate,endDate,calOptions,success,error);
+			}
+			
+    	}
+  	  }
+  	  
+   } else {
+   	
+   	  //alert('Automatically creating events');
+      calOptions.recurrence = "daily"; // supported are: daily, weekly, monthly, yearly
+	  eventEnd = new Date();
+	  eventEnd.setFullYear(eventEnd.getFullYear() + 1);
+	  calOptions.recurrenceEndDate = eventEnd;
+	  calOptions.url = "meetime://craving";
+	  window.plugins.calendar.createEventWithOptions(title,location,notes,startDate,endDate,calOptions,success,error);
+
+   } 
+  
+}
+
+function create_dinner() {
+  	
+  var startDate = new Date();  
+  startDate.setHours(parseInt($('#profile_dinner').val().substring(0, 2)));
+  startDate.setMinutes(parseInt($('#profile_dinner').val().substring(3, 5)));
+  
+  
+  var endDate = new Date;
+  endDate.setHours(parseInt($('#profile_dinner').val().substring(0, 2)));
+  endDate.setMinutes(parseInt($('#profile_dinner').val().substring(3, 5)) + 30);
+  
+  
+  //alert(startDate.toString());
+  //alert(endDate.toString());
+  
+  var title = "Lunch Time";
+  var location = "Unknown";
+  var notes = 'Please enter your craving';
+  var success = function(message) { alert("Lunch events created"); };
+  var error = function(message) { alert("Error: " + message); };
+  
+
+  var calOptions = window.plugins.calendar.getCalendarOptions();
+  
+  var deviceOSVersion = device.version;
+  var deviceOS;
+  
+  if(deviceOS = 'Android') {
+  	
+  	 //alert('Device OS is Android');
+  
+  	 if( parseInt( deviceOSVersion, 10 ) >= 4 )
+  	 {
+    	if( parseFloat( deviceOSVersion.substring(2, 5) ) >= 2.4 ) {
+    		
+    		//alert('Automatically creating events');
+    		calOptions.recurrence = "daily"; // supported are: daily, weekly, monthly, yearly
+		    eventEnd = new Date();
+		    eventEnd.setFullYear(eventEnd.getFullYear() + 1);
+		    calOptions.recurrenceEndDate = eventEnd;
+		    
+		    if( parseFloat( deviceOSVersion.substring(2, 5) ) >= 3.2 ) {
+		    	calOptions.url = "meetime://craving";	
+		    }
+		    
+		    window.plugins.calendar.createEventWithOptions(title,location,notes,startDate,endDate,calOptions,success,error);
+
+    	} else {
+    		
+    		//alert('Manually creating events');
+    		   		
+    		for (var i = 0; i < 5; i++) {
+    			
+    			startDate.setDate(startDate.getDate() + 1);
+    			endDate.setDate(endDate.getDate() + 1);
+    			
+    			if (i < 4) {
+    				success = function(message) { $('body').append(''); };
+    				//alert('Iterator i is ' + parseInt(i));
+    			} else {
+    				success = function(message) { alert("Dinner events created"); };
     			}
     				
     			window.plugins.calendar.createEventWithOptions(title,location,notes,startDate,endDate,calOptions,success,error);
