@@ -348,8 +348,8 @@ function create_lunch() {
   endDate.setMinutes(parseInt($('#profile_lunch').val().substring(3, 5)) + 30);
   
   
-  alert(startDate.toString());
-  alert(endDate.toString());
+  //alert(startDate.toString());
+  //alert(endDate.toString());
   
   var title = "Lunch Time";
   var location = "Unknown";
