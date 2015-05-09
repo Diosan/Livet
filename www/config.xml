@@ -6,14 +6,14 @@
         id        = "com.phonegap.helloworld"
         version   = "1.0.0">
 
-    <name>Livet Wellness</name>
+    <name>Livet MeeTime</name>
 
     <description>
-        Livet wellness center.
+        Livet health time management app.
     </description>
 
     <author href="http://phonegap.com" email="support@phonegap.com">
-        PhoneGap Team
+        Scorecard Mobile
     </author>
 
     <!--
