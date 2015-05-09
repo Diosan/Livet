@@ -12,6 +12,13 @@ if (localStorage.getItem("readings") == null) {
 	//alert('Reading Empty');
 
 	//readingsArray = [ { 'summary' : 'Test event <img src=\"img/emoticons/PNG/icontexto-emoticons-03-032x032.png\">', 'begin' : new Date(), 'end' : new Date() } ]; 
+ 
+	reading = { 'summary' : '<center><b>Today<b></center>', 'begin' : new Date(y, m, d), 'end' : new Date(y, m, d) };
+	readingsArray.push(reading);
+	reading = { 'summary' : '<center><b>Yesterday<b></center>', 'begin' : new Date(y, m, d - 1), 'end' : new Date(y, m, d - 1) };
+	readingsArray.push(reading);
+	reading = { 'summary' : '<center><b>Tomorrow<b></center>', 'begin' : new Date(y, m, d + 1), 'end' : new Date(y, m, d + 1) };
+	readingsArray.push(reading);
   
 } else {
 	
@@ -20,8 +27,12 @@ if (localStorage.getItem("readings") == null) {
 	//localStorage.removeItem('readings');
 	
 	reading = { 'summary' : '<center><b>Today<b></center>', 'begin' : new Date(y, m, d), 'end' : new Date(y, m, d) };
-	
 	readingsArray.push(reading);
+	reading = { 'summary' : '<center><b>Yesterday<b></center>', 'begin' : new Date(y, m, d - 1), 'end' : new Date(y, m, d - 1) };
+	readingsArray.push(reading);
+	reading = { 'summary' : '<center><b>Tomorrow<b></center>', 'begin' : new Date(y, m, d + 1), 'end' : new Date(y, m, d + 1) };
+	readingsArray.push(reading);
+	
 	// = [ { "summary" : "Test event", "begin" : new Date(), "end" : new Date() } ];
 		
 	readings = JSON.parse(localStorage.getItem("readings"));
@@ -34,20 +45,30 @@ if (localStorage.getItem("readings") == null) {
 	var by = date.getFullYear();
 	var ed = date.getDate();
 	var em = date.getMonth();
-	var ey = date.getFullYear();  
+	var ey = date.getFullYear();
+	
+	//alert('There are ' + parseInt(readings.length) + ' readings');
+	
+	//alert(y);
+	//alert(m);
+	//alert(d);  
   
     for (i = 0; i < readings.length; i++) {
     	
       reading = JSON.parse(readings[i]);
+      
+      //alert(reading.begin.substring(0, 4));
+      //alert(reading.begin.substring(5, 7));
+      //alert(reading.begin.substring(8, 10));
         
-      bd = parseInt(reading.begin.substring(0, 4));
+      by = parseInt(reading.begin.substring(0, 4));
 	  bm = parseInt(reading.begin.substring(5, 7));
-	  by = parseInt(reading.begin.substring(8, 10));
-	  ed = parseInt(reading.end.substring(0, 4));
+	  bd = parseInt(reading.begin.substring(8, 10));
+	  ey = parseInt(reading.end.substring(0, 4));
 	  em = parseInt(reading.end.substring(5, 7));
-	  ey = parseInt(reading.end.substring(8, 10));
+	  ed = parseInt(reading.end.substring(8, 10));
 	        
-      readingsArray.push( { 'summary' : reading.summary, 'begin' : new Date(y, m, d), 'end' : new Date(y, m, d) } );
+      readingsArray.push( { 'summary' : reading.summary, 'begin' : new Date(by, bm, bd), 'end' : new Date(ey, em, ed) } );
       
     }
         
@@ -67,6 +88,12 @@ $(function() {
 	
 	setProfile();
 	setupCalendar();
+	
+	$('#load_mood_chart').click( function() {
+		//alert('loading chart');
+		drawMoodChart();
+	});
+	
     
 	$('#profile_save').click( function() {
 		
@@ -97,25 +124,33 @@ $(function() {
 		m = date.getMonth();
  		y = date.getFullYear();
  		
-		reading = { "summary" : type + ":" + value + " " + units, "begin" : new Date(y, m, d), "end": new Date(y, m, d) };
+ 		
+ 		
+		reading = { 'summary' : type + ':' + value + ' ' + units, 'begin' : new Date(y, m, d), 'end' : new Date(y, m, d), 'type' : type, 'value' : value };
 		readingsArray.push(reading);
-		$('#calendar').trigger('refresh');
+		reading = { 'summary' : type + ':' + value + ' ' + units, 'begin' : new Date(y, m - 1, d), 'end' : new Date(y, m - 1, d), 'type' : type, 'value' : value };
 		readings.push(JSON.stringify(reading));
+		
+		
+		//alert('Month is ' + m);
+		
+		$('#calendar').trigger('refresh');
+		//readings.push(JSON.stringify(reading));
 		localStorage.setItem('readings', JSON.stringify(readings));
 		//localStorage.setItem("readings", JSON.stringify(readingsArray));
 		
 		$('.ui-li-static').each(function() {
-		//alert('decoding HTML');
+			//alert('decoding HTML');
     		$( this ).decHTML();
   			//alert($(this).html());
     	});
 
 		$('#calendar .ui-btn').click(function() {
-    	$('.ui-li-static').each(function() {
-    		$( this ).decHTML();
-  			//alert($(this).html());
-    	});	
-    });		
+    		$('.ui-li-static').each(function() {
+    			$( this ).decHTML();
+  				//alert($(this).html());
+    		});	
+    	});		
 		
 	});
 	
@@ -187,10 +222,56 @@ $(function() {
 		m = date.getMonth();
  		y = date.getFullYear();
  		
-		reading = { 'summary' : mood + '<img src="' + icon + '" > :' + note, 'begin' : new Date(y, m, d), 'end': new Date(y, m, d) };
+		reading = { 'summary' : mood + '<img src="' + icon + '" > :' + note, 'begin' : new Date(y, m, d), 'end': new Date(y, m, d), 'type' : 'journal', 'value' : mood };
 		readingsArray.push(reading);
-		$('#calendar').trigger('refresh');
+		reading = { 'summary' : mood + '<img src="' + icon + '" > :' + note, 'begin' : new Date(y, m -1, d), 'end': new Date(y, m - 1, d), 'type' : 'journal', 'value' : mood };
 		readings.push(JSON.stringify(reading));
+		
+		
+		//readingsArray.push(reading);
+		$('#calendar').trigger('refresh');
+		//readings.push(JSON.stringify(reading));
+		localStorage.setItem('readings', JSON.stringify(readings));
+		//localStorage.setItem("readings", JSON.stringify(readingsArray));
+		
+		$('.ui-li-static').each(function() {
+			//alert('decoding html');
+    		$( this ).decHTML();
+  			//alert($(this).html());
+    	});
+    	
+    	$('#calendar .ui-btn').click(function() {
+    		$('.ui-li-static').each(function() {
+    			$( this ).decHTML();
+  				//alert($(this).html());
+    		});	
+    	});		
+		
+	});
+	
+	$('#craving_save').click( function() {
+		//var today = new Date();
+		//alert(today.getUTCMonth());
+		var date = new Date();
+		var d = date.getDate();
+		var m = date.getMonth();
+		var y = date.getFullYear();
+		var craving = $('#craving_type').val().toString();
+		
+		date = new Date();
+		d = date.getDate();
+		m = date.getMonth();
+ 		y = date.getFullYear();
+ 		
+		reading = { 'summary' : craving, 'begin' : new Date(y, m, d), 'end': new Date(y, m, d), 'type' : 'craving' };
+		readingsArray.push(reading);
+		reading = { 'summary' : craving, 'begin' : new Date(y, m -1, d), 'end': new Date(y, m - 1, d), 'type' : 'craving' };
+		readings.push(JSON.stringify(reading));
+		
+		
+		//readingsArray.push(reading);
+		$('#calendar').trigger('refresh');
+		//readings.push(JSON.stringify(reading));
 		localStorage.setItem('readings', JSON.stringify(readings));
 		//localStorage.setItem("readings", JSON.stringify(readingsArray));
 		
@@ -201,6 +282,7 @@ $(function() {
     	});		
 		
 	});
+
 
 	
 	$('#calendar .ui-btn').click(function() {
@@ -440,7 +522,7 @@ function create_breakfast() {
   
   var title = "Breakfast Time";
   var location = "Unknown";
-  var notes = 'Please enter your craving';
+  var notes = 'What are your food cravings? Please enter in MeeTime';
   var success = function(message) { alert("Lunch events created"); };
   var error = function(message) { alert("Error: " + message); };
   
