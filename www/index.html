@@ -79,8 +79,6 @@
           </select>
           <label for="profile_age">Age:</label>
       	  <input type="range" name="profile_age" id="profile_age" value="50" min="0" max="100">
-      	  <label for="weight">Weight (Pounds):</label>
-      	  <input type="range" name="profile_weight" id="profile_weight" value="160" min="0" max="300">
 	  <label for=profile_breakfast">Breakfast Time:</label>
 	  <input type="text" name="profile_breakfast" id="profile_breakfast" data-role="datebox" data-options='{"mode":"timebox"}'>
 	  <label for=profile_lunch">Lunch Time:</label>
@@ -101,7 +99,7 @@
   	
   	<div style="background-color:rgba(255,255,255,0.75); width: 80%; margin-left: 10%; margin-top: 15%; border-radius: 10px; text-align: center;">
   		<br>
-  		<a href="#craving">Craving</a>
+  		
   		<table class="text-left ui-responsive" style="margin: auto;" >
   			<tr><td><strong>Name:</strong></td><td><p id="profilename"> </p></td></tr>
   			<tr><td><strong>Age:</strong></td><td><p id="profileage"> </p></td></tr>
@@ -161,6 +159,7 @@
           <select name="reading_type" id="reading_type">
           		<option value="Weight">Weight</option>
           		<option value="Blood Sugar">Blood Sugar</option>
+          		<option value="Blood Pressure">Blood Pressure</option>
           </select>
           <label for="reading_value">Value</label>
           <input type="range" name="reading_value" id="reading_value" value="150" min="0" max="300">
@@ -296,6 +295,24 @@
 
 </div> 
 
+<div data-role="page"  id="glucose_chart" style="background: #ffffff url(images/1554564_524919460940652_2126412582_n.jpg) no-repeat fixed center; background-size: 100% 100%;" >
+
+   <div data-role="header" data-position="fixed" data-fullscreen="true" class="text-center" >
+  		<img src="icon2.png" style="width: 55px; float:left; display:inline;"><p style="float: left;">&nbsp;&nbsp;Livet MeeTime<p>
+  </div>
+
+    <!--Div that will hold the pie chart-->
+    <div style="background-color:rgba(255,255,255,0.75); width: 100%; margin-top: 15%; text-align: center;">
+    	<div id="glucosechart_div"></div>
+    </div>
+
+   <div data-role="main" class="ui-content text-center">
+    	<div data-role="footer" data-position="fixed"></div>
+   </div>
+
+
+</div>
+
 <div data-role="page"  id="mood_chart" style="background: #ffffff url(images/1554564_524919460940652_2126412582_n.jpg) no-repeat fixed center; background-size: 100% 100%;" >
 
    <div data-role="header" data-position="fixed" data-fullscreen="true" class="text-center" >
@@ -304,7 +321,7 @@
 
     <!--Div that will hold the pie chart-->
     <div style="background-color:rgba(255,255,255,0.75); width: 100%; margin-top: 15%; text-align: center;">
-    	<div id="chart_div"></div>
+    	<div id="moodchart_div" style="width: 900px; height: 500px;" ></div>
     </div>
 
    <div data-role="main" class="ui-content text-center">

@@ -94,6 +94,11 @@ $(function() {
 		drawMoodChart();
 	});
 	
+	$('#load_glucose_chart').click( function() {
+		//alert('loading chart');
+		drawGlucoseChart();
+	});
+	
     
 	$('#profile_save').click( function() {
 		
@@ -315,12 +320,9 @@ function saveProfile() {
 	//alert($('#profile_breakfast').val());
 	localStorage.setItem("name", $('#profile_name').val());
 	localStorage.setItem("age", $('#profile_age').val() + " years");
-	localStorage.setItem("weight", $('#profile_weight').val());
 	localStorage.setItem("breakfast", $('#profile_breakfast').val());
 	localStorage.setItem("lunch", $('#profile_lunch').val());
 	localStorage.setItem("dinner", $('#profile_dinner').val());
-	localStorage.setItem("sugar", $('#profile_sugar').val());
-	localStorage.setItem("sugar_fasting", $('#profile_sugar_fasting').val());
 	calendar_events();
 	
 }
