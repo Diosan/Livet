@@ -94,10 +94,25 @@ $(function() {
 		drawMoodChart();
 	});
 	
+	$('#load_craving_chart').click( function() {
+		//alert('loading craving chart');
+		drawCravingChart();
+	});
+	
 	$('#load_glucose_chart').click( function() {
 		//alert('loading chart');
 		drawGlucoseChart();
 	});
+	
+	$('#load_bp_chart').click( function() {
+		//alert('loading BP chart');
+		drawBpChart();
+	});
+	
+	
+	
+	
+	
 	
     
 	$('#profile_save').click( function() {
