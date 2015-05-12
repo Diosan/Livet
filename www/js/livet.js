@@ -335,9 +335,13 @@ function saveProfile() {
 	//alert($('#profile_breakfast').val());
 	localStorage.setItem("name", $('#profile_name').val());
 	localStorage.setItem("age", $('#profile_age').val() + " years");
+	localStorage.setItem("gender", $('#profile_gender').val());
 	localStorage.setItem("breakfast", $('#profile_breakfast').val());
 	localStorage.setItem("lunch", $('#profile_lunch').val());
 	localStorage.setItem("dinner", $('#profile_dinner').val());
+	localStorage.setItem("meetime", $('#profile_meetime').val());
+	localStorage.setItem("meeactivity", $('#profile_meeactivity').val());
+	//alert('User set MeeActivity to ' + $('#profile_meeactivity').val());
 	calendar_events();
 	
 }
@@ -348,9 +352,13 @@ function setProfile() {
 	
 	setProfilefield('name');
 	setProfilefield('age');
+	setProfilefield('gender');
 	setProfilefield('breakfast');
 	setProfilefield('lunch');
 	setProfilefield('dinner');
+	setProfilefield('meetime');
+	setProfilefield('meeactivity');
+	//alert(localStorage.getItem('meeactivity'));
 	//setProfilefield('weight');
 	//setProfilefield('sugar');
 	//setProfilefield('sugar_fasting');
@@ -624,6 +632,89 @@ function create_dinner() {
   var location = "Unknown";
   var notes = 'Please enter your craving';
   var success = function(message) { alert("Lunch events created"); };
+  var error = function(message) { alert("Error: " + message); };
+  
+
+  var calOptions = window.plugins.calendar.getCalendarOptions();
+  
+  var deviceOSVersion = device.version;
+  var deviceOS;
+  
+  if(deviceOS = 'Android') {
+  	
+  	 //alert('Device OS is Android');
+  
+  	 if( parseInt( deviceOSVersion, 10 ) >= 4 )
+  	 {
+    	if( parseFloat( deviceOSVersion.substring(2, 5) ) >= 2.4 ) {
+    		
+    		//alert('Automatically creating events');
+    		calOptions.recurrence = "daily"; // supported are: daily, weekly, monthly, yearly
+		    eventEnd = new Date();
+		    eventEnd.setFullYear(eventEnd.getFullYear() + 1);
+		    calOptions.recurrenceEndDate = eventEnd;
+		    
+		    if( parseFloat( deviceOSVersion.substring(2, 5) ) >= 3.2 ) {
+		    	calOptions.url = "meetime://craving";	
+		    }
+		    
+		    window.plugins.calendar.createEventWithOptions(title,location,notes,startDate,endDate,calOptions,success,error);
+
+    	} else {
+    		
+    		//alert('Manually creating events');
+    		   		
+    		for (var i = 0; i < 5; i++) {
+    			
+    			startDate.setDate(startDate.getDate() + 1);
+    			endDate.setDate(endDate.getDate() + 1);
+    			
+    			if (i < 4) {
+    				success = function(message) { $('body').append(''); };
+    				//alert('Iterator i is ' + parseInt(i));
+    			} else {
+    				success = function(message) { alert("Dinner events created"); };
+    			}
+    				
+    			window.plugins.calendar.createEventWithOptions(title,location,notes,startDate,endDate,calOptions,success,error);
+			}
+			
+    	}
+  	  }
+  	  
+   } else {
+   	
+   	  //alert('Automatically creating events');
+      calOptions.recurrence = "daily"; // supported are: daily, weekly, monthly, yearly
+	  eventEnd = new Date();
+	  eventEnd.setFullYear(eventEnd.getFullYear() + 1);
+	  calOptions.recurrenceEndDate = eventEnd;
+	  calOptions.url = "meetime://craving";
+	  window.plugins.calendar.createEventWithOptions(title,location,notes,startDate,endDate,calOptions,success,error);
+
+   } 
+  
+}
+
+function create_meetime() {
+  	
+  var startDate = new Date();  
+  startDate.setHours(parseInt($('#profile_meetime').val().substring(0, 2)));
+  startDate.setMinutes(parseInt($('#profile_meetime').val().substring(3, 5)));
+  
+  
+  var endDate = new Date;
+  endDate.setHours(parseInt($('#profile_meetime').val().substring(0, 2)));
+  endDate.setMinutes(parseInt($('#profile_meetime').val().substring(3, 5)) + 30);
+  
+  
+  //alert(startDate.toString());
+  //alert(endDate.toString());
+  
+  var title = "MeeTime: " + $('#profile_meeactivity').val();
+  var location = "Unknown";
+  var notes = 'Time for MeeTime ';
+  var success = function(message) { alert("MeeTime events created"); };
   var error = function(message) { alert("Error: " + message); };
   
 

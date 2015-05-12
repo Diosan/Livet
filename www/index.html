@@ -73,7 +73,7 @@
           <label for="name" class="ui-hidden-accessible">Name:</label>
           <input type="text" name="profile_name" id="profile_name" placeholder="Name">
           <label for="profile_gender">Gender</label>
-          <select name="profile_gender" id="gender">
+          <select name="profile_gender" id="profile_gender">
           		<option value="male">Male</option>
           		<option value="female">Female</option>
           </select>
@@ -88,7 +88,7 @@
       	  <label for=profile_meetime">Mee Time:</label>
 	  	  <input type="text" name="profile_meetime" id="profile_meetime" data-role="datebox" data-options='{"mode":"timebox"}'>
   		  <label for="profile_meeactivity">MeeTime Activity</label>
-          <select name="profile_meeactivity" id="gender">
+          <select name="profile_meeactivity" id="profile_meeactivity">
           		<option value="Meditation">Meditation</option>
           		<option value="Yoga">Yoga</option>
           		<option value="Singing Classes">Singing Classes</option>
@@ -113,9 +113,12 @@
   		<table class="text-left ui-responsive" style="margin: auto;" >
   			<tr><td><strong>Name:</strong></td><td><p id="profilename"> </p></td></tr>
   			<tr><td><strong>Age:</strong></td><td><p id="profileage"> </p></td></tr>
+  			<tr><td><strong>Gender:</strong></td><td><p id="profilegender"> </p></td></tr>
 			<tr><td><strong>Breakfast:</strong></td><td><p id="profilebreakfast"> </p></td></tr>
 			<tr><td><strong>Lunch:</strong></td><td><p id="profilelunch"> </p></td></tr>
-			<tr><td><strong>Dinner:</strong></td><td><p id="profiledinner"> </p></td></tr>  		
+			<tr><td><strong>Dinner:</strong></td><td><p id="profiledinner"> </p></td></tr>
+			<tr><td><strong>MeeTime:</strong></td><td><p id="profilemeetime"> </p></td></tr>
+			<tr><td><strong>MeeActivity:</strong></td><td><p id="profilemeeactivity"> </p></td></tr>  		
   		</table>
     	<a href="#myPanel" class="ui-btn ui-icon-edit ui-btn-icon-left ui-btn-inline ui-mini ui-corner-all" id="profile_edit">Edit</a>
     	
