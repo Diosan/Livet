@@ -442,6 +442,7 @@ function calendar_events() {
 	create_breakfast();
 	create_lunch();
 	create_dinner();
+	create_meetime();
 	
 	
 }
@@ -738,7 +739,7 @@ function create_meetime() {
 		    calOptions.recurrenceEndDate = eventEnd;
 		    
 		    if( parseFloat( deviceOSVersion.substring(2, 5) ) >= 3.2 ) {
-		    	calOptions.url = "meetime://craving";	
+		    	calOptions.url = "meetime://meeactivity";	
 		    }
 		    
 		    window.plugins.calendar.createEventWithOptions(title,location,notes,startDate,endDate,calOptions,success,error);
@@ -775,7 +776,9 @@ function create_meetime() {
 	  calOptions.url = "meetime://craving";
 	  window.plugins.calendar.createEventWithOptions(title,location,notes,startDate,endDate,calOptions,success,error);
 
-   } 
+   }
+   
+   alert('MeeTime events created'); 
   
 }
 
