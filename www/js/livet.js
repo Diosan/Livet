@@ -634,6 +634,9 @@ function create_lunch() {
     			}
     				
     			window.plugins.calendar.createEventWithOptions(title,location,notes,startDate,endDate,calOptions,success,error);
+    			
+    			success = function(message) { $('body').append(''); };
+    			
     			window.plugins.calendar.createEventWithOptions('After Lunch Mood',location,'Please enter your mood in MeeTime',afterDate,aftereDate,calOptions,success,error);
 			
 			}
@@ -738,6 +741,9 @@ function create_breakfast() {
     			}
     				
     			window.plugins.calendar.createEventWithOptions(title,location,notes,startDate,endDate,calOptions,success,error);
+    			
+    			success = function(message) { $('body').append(''); };
+    			
     			window.plugins.calendar.createEventWithOptions('After Breakfast Mood',location,'Please enter your mood in MeeTime',afterDate,aftereDate,calOptions,success,error);
 			
 			}
@@ -840,6 +846,9 @@ function create_dinner() {
     			}
     				
     			window.plugins.calendar.createEventWithOptions(title,location,notes,startDate,endDate,calOptions,success,error);
+    			
+    			success = function(message) { $('body').append(''); };
+    			
     			window.plugins.calendar.createEventWithOptions('After Dinner Mood',location,'Please enter your mood in MeeTime',afterDate,aftereDate,calOptions,success,error);
 			}
 			
