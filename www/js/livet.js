@@ -562,7 +562,14 @@ function create_lunch() {
   endDate.setHours(parseInt($('#profile_lunch').val().substring(0, 2)));
   endDate.setMinutes(parseInt($('#profile_lunch').val().substring(3, 5)) + 30);
   
-  var afterDate = startDate.setHours(startDate.getHours() + 2);
+  var afterDate = new Date();  
+  startDate.setHours(parseInt($('#profile_lunch').val().substring(0, 2)) + 2);
+  startDate.setMinutes(parseInt($('#profile_lunch').val().substring(3, 5)));
+  
+  
+  var aftereDate = new Date;
+  endDate.setHours(parseInt($('#profile_lunch').val().substring(0, 2)) + 2);
+  endDate.setMinutes(parseInt($('#profile_lunch').val().substring(3, 5)) + 30);
   
   
   //alert(startDate.toString());
@@ -604,7 +611,7 @@ function create_lunch() {
 		    	calOptions.url = "meetime://mood";	
 		    }
 		    		    
-		    window.plugins.calendar.createEventWithOptions('After Lunch Mood',location,'Please enter your mood in MeeTime',afterDate,afterDate,calOptions,success,error);
+		    window.plugins.calendar.createEventWithOptions('After Lunch Mood',location,'Please enter your mood in MeeTime',afterDate,aftereDate,calOptions,success,error);
 			
 
     	} else {
@@ -615,6 +622,8 @@ function create_lunch() {
     			
     			startDate.setDate(startDate.getDate() + 1);
     			endDate.setDate(endDate.getDate() + 1);
+    			afterDate.setDate(afterDate.getDate() + 1);
+    			aftereDate.setDate(aftereDate.getDate() + 1);
     			
     			if (i < 4) {
     				success = function(message) { $('body').append(''); };
@@ -624,7 +633,7 @@ function create_lunch() {
     			}
     				
     			window.plugins.calendar.createEventWithOptions(title,location,notes,startDate,endDate,calOptions,success,error);
-    			window.plugins.calendar.createEventWithOptions('After Lunch Mood',location,'Please enter your mood in MeeTime',afterDate,afterDate,calOptions,success,error);
+    			window.plugins.calendar.createEventWithOptions('After Lunch Mood',location,'Please enter your mood in MeeTime',afterDate,aftereDate,calOptions,success,error);
 			
 			}
 			
@@ -641,7 +650,7 @@ function create_lunch() {
 	  calOptions.url = "meetime://craving";
 	  window.plugins.calendar.createEventWithOptions(title,location,notes,startDate,endDate,calOptions,success,error);
 	  calOptions.url = "meetime://mood";
-	  window.plugins.calendar.createEventWithOptions('After Lunch Mood',location,'Please enter your mood in MeeTime',afterDate,afterDate,calOptions,success,error);
+	  window.plugins.calendar.createEventWithOptions('After Lunch Mood',location,'Please enter your mood in MeeTime',afterDate,aftereDate,calOptions,success,error);
 
    } 
   
@@ -659,7 +668,14 @@ function create_breakfast() {
   endDate.setHours(parseInt($('#profile_breakfast').val().substring(0, 2)));
   endDate.setMinutes(parseInt($('#profile_breakfast').val().substring(3, 5)) + 30);
   
-  var afterDate = startDate.setHours(startDate.getHours() + 2);
+  var afterDate = new Date();  
+  startDate.setHours(parseInt($('#profile_breakfast').val().substring(0, 2)) + 2);
+  startDate.setMinutes(parseInt($('#profile_breakfast').val().substring(3, 5)));
+  
+  
+  var aftereDate = new Date;
+  endDate.setHours(parseInt($('#profile_breakfast').val().substring(0, 2)) + 2);
+  endDate.setMinutes(parseInt($('#profile_breakfast').val().substring(3, 5)) + 30);
   
   //alert(startDate.toString());
   //alert(endDate.toString());
@@ -700,7 +716,7 @@ function create_breakfast() {
 		    	calOptions.url = "meetime://mood";	
 		    }
 
-			window.plugins.calendar.createEventWithOptions('After Breakfast Mood',location,'Please enter your mood in MeeTime',afterDate,afterDate,calOptions,success,error);
+			window.plugins.calendar.createEventWithOptions('After Breakfast Mood',location,'Please enter your mood in MeeTime',afterDate,aftereDate,calOptions,success,error);
 
     	} else {
     		
@@ -710,6 +726,8 @@ function create_breakfast() {
     			
     			startDate.setDate(startDate.getDate() + 1);
     			endDate.setDate(endDate.getDate() + 1);
+    			afterDate.setDate(afterDate.getDate() + 1);
+    			aftereDate.setDate(aftereDate.getDate() + 1);
     			
     			if (i < 4) {
     				success = function(message) { $('body').append(''); };
@@ -719,7 +737,7 @@ function create_breakfast() {
     			}
     				
     			window.plugins.calendar.createEventWithOptions(title,location,notes,startDate,endDate,calOptions,success,error);
-    			window.plugins.calendar.createEventWithOptions('After Breakfast Mood',location,'Please enter your mood in MeeTime',afterDate,afterDate,calOptions,success,error);
+    			window.plugins.calendar.createEventWithOptions('After Breakfast Mood',location,'Please enter your mood in MeeTime',afterDate,aftereDate,calOptions,success,error);
 			
 			}
 			
@@ -736,7 +754,7 @@ function create_breakfast() {
 	  calOptions.url = "meetime://craving";
 	  window.plugins.calendar.createEventWithOptions(title,location,notes,startDate,endDate,calOptions,success,error);
 	  calOptions.url = "meetime://mood";
-	  window.plugins.calendar.createEventWithOptions('After Breakfast Mood',location,'Please enter your mood in MeeTime',afterDate,afterDate,calOptions,success,error);
+	  window.plugins.calendar.createEventWithOptions('After Breakfast Mood',location,'Please enter your mood in MeeTime',afterDate,aftereDate,calOptions,success,error);
    } 
   
 }
@@ -752,7 +770,14 @@ function create_dinner() {
   endDate.setHours(parseInt($('#profile_dinner').val().substring(0, 2)));
   endDate.setMinutes(parseInt($('#profile_dinner').val().substring(3, 5)) + 30);
   
-  var afterDate = startDate.setHours(startDate.getHours() + 2);
+  var afterDate = new Date();  
+  startDate.setHours(parseInt($('#profile_dinner').val().substring(0, 2)) + 2);
+  startDate.setMinutes(parseInt($('#profile_dinner').val().substring(3, 5)));
+  
+  
+  var aftereDate = new Date;
+  endDate.setHours(parseInt($('#profile_dinner').val().substring(0, 2)) + 2);
+  endDate.setMinutes(parseInt($('#profile_dinner').val().substring(3, 5)) + 30);
   
   //alert(startDate.toString());
   //alert(endDate.toString());
@@ -793,7 +818,7 @@ function create_dinner() {
 		    	calOptions.url = "meetime://mood";	
 		    }
 		    
-		    window.plugins.calendar.createEventWithOptions('After Dinner Mood',location,'Please enter your mood in MeeTime',afterDate,afterDate,calOptions,success,error);
+		    window.plugins.calendar.createEventWithOptions('After Dinner Mood',location,'Please enter your mood in MeeTime',afterDate,aftereDate,calOptions,success,error);
 
     	} else {
     		
@@ -803,6 +828,8 @@ function create_dinner() {
     			
     			startDate.setDate(startDate.getDate() + 1);
     			endDate.setDate(endDate.getDate() + 1);
+    			afterDate.setDate(afterDate.getDate() + 1);
+    			aftereDate.setDate(aftereDate.getDate() + 1);
     			
     			if (i < 4) {
     				success = function(message) { $('body').append(''); };
@@ -812,7 +839,7 @@ function create_dinner() {
     			}
     				
     			window.plugins.calendar.createEventWithOptions(title,location,notes,startDate,endDate,calOptions,success,error);
-    			window.plugins.calendar.createEventWithOptions('After Dinner Mood',location,'Please enter your mood in MeeTime',afterDate,afterDate,calOptions,success,error);
+    			window.plugins.calendar.createEventWithOptions('After Dinner Mood',location,'Please enter your mood in MeeTime',afterDate,aftereDate,calOptions,success,error);
 			}
 			
     	}
@@ -828,7 +855,7 @@ function create_dinner() {
 	  calOptions.url = "meetime://craving";
 	  window.plugins.calendar.createEventWithOptions(title,location,notes,startDate,endDate,calOptions,success,error);
 	  calOptions.url = "meetime://mood";
-	  window.plugins.calendar.createEventWithOptions('After Dinner Mood',location,'Please enter your mood in MeeTime',afterDate,afterDate,calOptions,success,error);
+	  window.plugins.calendar.createEventWithOptions('After Dinner Mood',location,'Please enter your mood in MeeTime',afterDate,aftereDate,calOptions,success,error);
    } 
   
 }
