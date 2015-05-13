@@ -223,18 +223,123 @@ $(function() {
 		var icon = '';
 		
 	   switch (mood) {
-		    case "Happy":
-        		icon = "img/emoticons/PNG/icontexto-emoticons-03-032x032.png";
+		    case "Anger":
+        		icon = "img/emoticons/PNG/icontexto-emoticons-14-032x032.png";
         		//alert(icon);
         		break;
-        	case "Sad":
+        	case "Anxiety":
+        		icon = "img/emoticons/PNG/icontexto-emoticons-12-032x032.png";
+        		//alert(icon);
+        		break;
+        	case "Cramps/Pain":
         		icon = "img/emoticons/PNG/icontexto-emoticons-13-032x032.png";
         		//alert(icon);
         		break;
-        	case "Sick":
+        	case "Cheerful":
+        		icon = "img/emoticons/PNG/icontexto-emoticons-05-032x032.png";
+        		//alert(icon);
+        		break;
+        	case "Depressed":
+        		icon = "img/emoticons/PNG/icontexto-emoticons-13-032x032.png";
+        		//alert(icon);
+        		break;
+        	case "Energetic":
+        		icon = "img/emoticons/PNG/icontexto-emoticons-08-032x032.png";
+        		//alert(icon);
+        		break;
+        	case "Food or Snack Craving":
+        		icon = "img/emoticons/PNG/icontexto-emoticons-10-032x032.png";
+        		//alert(icon);
+        		break;
+        	case "Forgetful":
+        		icon = "img/emoticons/PNG/icontexto-emoticons-12-032x032.png";
+        		//alert(icon);
+        		break;
+        	case "Headache":
         		icon = "img/emoticons/PNG/icontexto-emoticons-11-032x032.png";
         		//alert(icon);
-        		break;        				
+        		break;
+        	case "Hopelessness":
+        		icon = "img/emoticons/PNG/icontexto-emoticons-12-032x032.png";
+        		//alert(icon);
+        		break;
+        	case "Impatient":
+        		icon = "img/emoticons/PNG/icontexto-emoticons-12-032x032.png";
+        		//alert(icon);
+        		break;
+        	case "Insecure":
+        		icon = "img/emoticons/PNG/icontexto-emoticons-12-032x032.png";
+        		//alert(icon);
+        		break;
+        	case "Irritability":
+        		icon = "img/emoticons/PNG/icontexto-emoticons-12-032x032.png";
+        		//alert(icon);
+        		break;
+        	case "Lonely":
+        		icon = "img/emoticons/PNG/icontexto-emoticons-12-032x032.png";
+        		//alert(icon);
+        		break;
+        	case "Worried":
+        		icon = "img/emoticons/PNG/icontexto-emoticons-10-032x032.png";
+        		//alert(icon);
+        		break;
+        	case "Want to Sleep":
+        		icon = "img/emoticons/PNG/icontexto-emoticons-12-032x032.png";
+        		//alert(icon);
+        		break;
+        	case "Mistrustful":
+        		icon = "img/emoticons/PNG/icontexto-emoticons-12-032x032.png";
+        		//alert(icon);
+        		break;
+        	case "Talkative":
+        		icon = "img/emoticons/PNG/icontexto-emoticons-06-032x032.png";
+        		//alert(icon);
+        		break;
+        	case "Menstration":
+        		icon = "img/emoticons/PNG/icontexto-emoticons-10-032x032.png";
+        		//alert(icon);
+        		break;
+        	case "Back Pain":
+        		icon = "img/emoticons/PNG/icontexto-emoticons-11-032x032.png";
+        		//alert(icon);
+        		break;
+        	case "Swelling":
+        		icon = "img/emoticons/PNG/icontexto-emoticons-11-032x032.png";
+        		//alert(icon);
+        		break;
+        	case "Tenderness":
+        		icon = "img/emoticons/PNG/icontexto-emoticons-11-032x032.png";
+        		//alert(icon);
+        		break;
+        	case "Water Gain/Retention":
+        		icon = "img/emoticons/PNG/icontexto-emoticons-11-032x032.png";
+        		//alert(icon);
+        		break;
+        	case "Weight Gain":
+        		icon = "img/emoticons/PNG/icontexto-emoticons-11-032x032.png";
+        		//alert(icon);
+        		break;
+        	case "Lack Energy":
+        		icon = "img/emoticons/PNG/icontexto-emoticons-12-032x032.png";
+        		//alert(icon);
+        		break;
+        	case "Moody":
+        		icon = "img/emoticons/PNG/icontexto-emoticons-12-032x032.png";
+        		//alert(icon);
+        		break;
+        	case "Jealousy":
+        		icon = "img/emoticons/PNG/icontexto-emoticons-12-032x032.png";
+        		//alert(icon);
+        		break;
+        	case "Tend to cry":
+        		icon = "img/emoticons/PNG/icontexto-emoticons-12-032x032.png";
+        		//alert(icon);
+        		break;
+        	case "Stressed":
+        		icon = "img/emoticons/PNG/icontexto-emoticons-12-032x032.png";
+        		//alert(icon);
+        		break;
+        					
 		}
 		
 		date = new Date();
@@ -442,8 +547,7 @@ function calendar_events() {
 	create_breakfast();
 	create_lunch();
 	create_dinner();
-	create_meetime();
-	
+	create_meetime();	
 	
 }
 
@@ -494,6 +598,13 @@ function create_lunch() {
 		    
 		    window.plugins.calendar.createEventWithOptions(title,location,notes,startDate,endDate,calOptions,success,error);
 
+			if( parseFloat( deviceOSVersion.substring(2, 5) ) >= 3.2 ) {
+		    	calOptions.url = "meetime://mood";	
+		    }
+		    
+		   window.plugins.calendar.createEventWithOptions('After Lunch Mood',location,'Please enter your mood in MeeTime',startDate.setHours(startDate.getHours() + 2),startDate.setHours(startDate.getHours() + 2),calOptions,success,error);
+			
+
     	} else {
     		
     		//alert('Manually creating events');
@@ -511,6 +622,8 @@ function create_lunch() {
     			}
     				
     			window.plugins.calendar.createEventWithOptions(title,location,notes,startDate,endDate,calOptions,success,error);
+    			window.plugins.calendar.createEventWithOptions('After Lunch Mood',location,'Please enter your mood in MeeTime',startDate.setHours(startDate.getHours() + 2),startDate.setHours(startDate.getHours() + 2),calOptions,success,error);
+			
 			}
 			
     	}
@@ -525,6 +638,8 @@ function create_lunch() {
 	  calOptions.recurrenceEndDate = eventEnd;
 	  calOptions.url = "meetime://craving";
 	  window.plugins.calendar.createEventWithOptions(title,location,notes,startDate,endDate,calOptions,success,error);
+	  calOptions.url = "meetime://mood";
+	  window.plugins.calendar.createEventWithOptions('After Lunch Mood',location,'Please enter your mood in MeeTime',startDate.setHours(startDate.getHours() + 2),startDate.setHours(startDate.getHours() + 2),calOptions,success,error);
 
    } 
   
@@ -578,6 +693,12 @@ function create_breakfast() {
 		    
 		    window.plugins.calendar.createEventWithOptions(title,location,notes,startDate,endDate,calOptions,success,error);
 
+			if( parseFloat( deviceOSVersion.substring(2, 5) ) >= 3.2 ) {
+		    	calOptions.url = "meetime://mood";	
+		    }
+
+			window.plugins.calendar.createEventWithOptions('After Lunch Mood',location,'Please enter your mood in MeeTime',startDate.setHours(startDate.getHours() + 2),startDate.setHours(startDate.getHours() + 2),calOptions,success,error);
+
     	} else {
     		
     		//alert('Manually creating events');
@@ -595,6 +716,8 @@ function create_breakfast() {
     			}
     				
     			window.plugins.calendar.createEventWithOptions(title,location,notes,startDate,endDate,calOptions,success,error);
+    			window.plugins.calendar.createEventWithOptions('After Breakfast Mood',location,'Please enter your mood in MeeTime',startDate.setHours(startDate.getHours() + 2),startDate.setHours(startDate.getHours() + 2),calOptions,success,error);
+			
 			}
 			
     	}
@@ -609,7 +732,8 @@ function create_breakfast() {
 	  calOptions.recurrenceEndDate = eventEnd;
 	  calOptions.url = "meetime://craving";
 	  window.plugins.calendar.createEventWithOptions(title,location,notes,startDate,endDate,calOptions,success,error);
-
+	  calOptions.url = "meetime://mood";
+	  window.plugins.calendar.createEventWithOptions('After Lunch Mood',location,'Please enter your mood in MeeTime',startDate.setHours(startDate.getHours() + 2),startDate.setHours(startDate.getHours() + 2),calOptions,success,error);
    } 
   
 }
@@ -660,6 +784,12 @@ function create_dinner() {
 		    }
 		    
 		    window.plugins.calendar.createEventWithOptions(title,location,notes,startDate,endDate,calOptions,success,error);
+		    
+		    if( parseFloat( deviceOSVersion.substring(2, 5) ) >= 3.2 ) {
+		    	calOptions.url = "meetime://mood";	
+		    }
+		    
+		    window.plugins.calendar.createEventWithOptions('After Dinner Moode',location,'Please enter your mood in MeeTime',startDate.setHours(startDate.getHours() + 2),startDate.setHours(startDate.getHours() + 2),calOptions,success,error);
 
     	} else {
     		
@@ -678,6 +808,7 @@ function create_dinner() {
     			}
     				
     			window.plugins.calendar.createEventWithOptions(title,location,notes,startDate,endDate,calOptions,success,error);
+    			window.plugins.calendar.createEventWithOptions('After Dinner Mood',location,'Please enter your mood in MeeTime',startDate.setHours(startDate.getHours() + 2),startDate.setHours(startDate.getHours() + 2),calOptions,success,error);
 			}
 			
     	}
@@ -692,7 +823,8 @@ function create_dinner() {
 	  calOptions.recurrenceEndDate = eventEnd;
 	  calOptions.url = "meetime://craving";
 	  window.plugins.calendar.createEventWithOptions(title,location,notes,startDate,endDate,calOptions,success,error);
-
+	  calOptions.url = "meetime://mood";
+	  window.plugins.calendar.createEventWithOptions('After Dinner Mood',location,'Please enter your mood in MeeTime',startDate.setHours(startDate.getHours() + 2),startDate.setHours(startDate.getHours() + 2),calOptions,success,error);
    } 
   
 }
