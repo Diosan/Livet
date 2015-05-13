@@ -563,13 +563,14 @@ function create_lunch() {
   endDate.setMinutes(parseInt($('#profile_lunch').val().substring(3, 5)) + 30);
   
   var afterDate = new Date();  
-  startDate.setHours(parseInt($('#profile_lunch').val().substring(0, 2)) + 2);
-  startDate.setMinutes(parseInt($('#profile_lunch').val().substring(3, 5)));
+  afterDate.setHours(parseInt($('#profile_lunch').val().substring(0, 2)) + 2);
+  afterDate.setMinutes(parseInt($('#profile_lunch').val().substring(3, 5)));
+  
   
   
   var aftereDate = new Date;
-  endDate.setHours(parseInt($('#profile_lunch').val().substring(0, 2)) + 2);
-  endDate.setMinutes(parseInt($('#profile_lunch').val().substring(3, 5)) + 30);
+  aftereDate.setHours(parseInt($('#profile_lunch').val().substring(0, 2)) + 2);
+  aftereDate.setMinutes(parseInt($('#profile_lunch').val().substring(3, 5)) + 30);
   
   
   //alert(startDate.toString());
@@ -669,13 +670,13 @@ function create_breakfast() {
   endDate.setMinutes(parseInt($('#profile_breakfast').val().substring(3, 5)) + 30);
   
   var afterDate = new Date();  
-  startDate.setHours(parseInt($('#profile_breakfast').val().substring(0, 2)) + 2);
-  startDate.setMinutes(parseInt($('#profile_breakfast').val().substring(3, 5)));
+  afterDate.setHours(parseInt($('#profile_breakfast').val().substring(0, 2)) + 2);
+  afterDate.setMinutes(parseInt($('#profile_breakfast').val().substring(3, 5)));
   
   
   var aftereDate = new Date;
-  endDate.setHours(parseInt($('#profile_breakfast').val().substring(0, 2)) + 2);
-  endDate.setMinutes(parseInt($('#profile_breakfast').val().substring(3, 5)) + 30);
+  aftereDate.setHours(parseInt($('#profile_breakfast').val().substring(0, 2)) + 2);
+  aftereDate.setMinutes(parseInt($('#profile_breakfast').val().substring(3, 5)) + 30);
   
   //alert(startDate.toString());
   //alert(endDate.toString());
@@ -771,13 +772,13 @@ function create_dinner() {
   endDate.setMinutes(parseInt($('#profile_dinner').val().substring(3, 5)) + 30);
   
   var afterDate = new Date();  
-  startDate.setHours(parseInt($('#profile_dinner').val().substring(0, 2)) + 2);
-  startDate.setMinutes(parseInt($('#profile_dinner').val().substring(3, 5)));
+  afterDate.setHours(parseInt($('#profile_dinner').val().substring(0, 2)) + 2);
+  afterDate.setMinutes(parseInt($('#profile_dinner').val().substring(3, 5)));
   
   
   var aftereDate = new Date;
-  endDate.setHours(parseInt($('#profile_dinner').val().substring(0, 2)) + 2);
-  endDate.setMinutes(parseInt($('#profile_dinner').val().substring(3, 5)) + 30);
+  aftereDate.setHours(parseInt($('#profile_dinner').val().substring(0, 2)) + 2);
+  aftereDate.setMinutes(parseInt($('#profile_dinner').val().substring(3, 5)) + 30);
   
   //alert(startDate.toString());
   //alert(endDate.toString());
