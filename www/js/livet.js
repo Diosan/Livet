@@ -562,7 +562,7 @@ function create_lunch() {
   endDate.setHours(parseInt($('#profile_lunch').val().substring(0, 2)));
   endDate.setMinutes(parseInt($('#profile_lunch').val().substring(3, 5)) + 30);
   
-  var aftertDate = startDate.setHours(startDate.getHours() + 2);
+  var afterDate = startDate.setHours(startDate.getHours() + 2);
   
   
   //alert(startDate.toString());
@@ -659,7 +659,7 @@ function create_breakfast() {
   endDate.setHours(parseInt($('#profile_breakfast').val().substring(0, 2)));
   endDate.setMinutes(parseInt($('#profile_breakfast').val().substring(3, 5)) + 30);
   
-  var aftertDate = startDate.setHours(startDate.getHours() + 2);
+  var afterDate = startDate.setHours(startDate.getHours() + 2);
   
   //alert(startDate.toString());
   //alert(endDate.toString());
@@ -752,7 +752,7 @@ function create_dinner() {
   endDate.setHours(parseInt($('#profile_dinner').val().substring(0, 2)));
   endDate.setMinutes(parseInt($('#profile_dinner').val().substring(3, 5)) + 30);
   
-  var aftertDate = startDate.setHours(startDate.getHours() + 2);
+  var afterDate = startDate.setHours(startDate.getHours() + 2);
   
   //alert(startDate.toString());
   //alert(endDate.toString());
