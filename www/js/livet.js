@@ -244,7 +244,7 @@ $(function() {
         		//alert(icon);
         		break;
         	case "Energetic":
-        		icon = "img/emoticons/PNG/icontexto-emoticons-08-032x032.png";
+        		icon = "img/emoticons/PNG/icontexto-emoticons-02-032x032.png";
         		//alert(icon);
         		break;
         	case "Food or Snack Craving":

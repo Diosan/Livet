@@ -48,6 +48,8 @@
     </head>
     <body>
     	
+
+    	
 <div data-role="page" style="background: #ffffff url(images/meetime.jpeg) no-repeat fixed center; background-size: 100% 100%;">
 	
   <div data-role="header" data-position="fixed" data-fullscreen="true">
@@ -55,7 +57,23 @@
   </div>
   
   <div data-role="main" class="ui-content">
-  	
+  	<div style="background-color:rgba(255,255,255,0.75); width: 80%; margin-left: 10%; margin-top: 15%; border-radius: 10px; text-align: center;">
+  	 <a href="#myPopupDialog" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" >Open Tour</a>  	   
+	 <div data-role="popup" id="myPopupDialog" data-overlay-theme="b">
+      <div data-role="header">
+        <h1>Welcome to MeeTime!</h1>
+      </div>
+
+      <div data-role="main" class="ui-content">
+        <h2>Welcome to Livet MeeTime!</h2>
+        <img src="img/livet1.jpg" align="left" style="height:100%;">
+        <div style="text-transform: none; height: 400px;">
+        	Livet MEE Time was inspired and designed by wellness professionals and a scientist with over 40 years of collective research and experience. The App features tools to inspire employees to plan, track, chart and perfect a healthier lifestyle. Users can track Stress levels vs. Food cravings and relate it graphically via a chart to Weight, Blood sugar, Blood pressure, and get recommendations and tips to make better choices and find alternative solutions to achieve their health goals. Users will be empowered with Health tips, natural proven herbal remedies, optimal water consumptions, daily reminders, stress reduction techniques along with many other key insights on achieving optimal health.
+        </div>
+        <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b ui-icon-back ui-btn-icon-left" data-rel="back">Go Back</a>
+      </div>
+     </div> 
+	</div>
   </div>
 
   <div data-role="footer" data-position="fixed">
@@ -173,6 +191,8 @@
           		<option value="Weight">Weight</option>
           		<option value="Blood Sugar">Blood Sugar</option>
           		<option value="Blood Pressure">Blood Pressure</option>
+          		<option value="HDL Cholesterol">HDL Cholesterol</option>
+          		<option valye="LDLCholesterol">LDL Cholesterol</option>
           </select>
           <label for="reading_value">Value</label>
           <input type="range" name="reading_value" id="reading_value" value="150" min="0" max="300">
@@ -317,6 +337,8 @@
   <div data-role="footer" data-position="fixed"></div>
   
 </div>
+
+
 
 <div data-role="page"  id="charts" style="background: #ffffff url(images/1554564_524919460940652_2126412582_n.jpg) no-repeat fixed center; background-size: 100% 100%;" >
 
