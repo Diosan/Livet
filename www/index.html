@@ -44,22 +44,22 @@
 	
         
         
-        <title>Livet MeeTime</title>
+        <title>MeeTime</title>
     </head>
     <body>
     	
 
     	
-<div data-role="page" style="background: #ffffff url(images/meetime.jpeg) no-repeat fixed center; background-size: 100% 100%;">
+<div data-role="page"  id="home" style="background: #ffffff url(images/meetime.jpeg) no-repeat fixed center; background-size: 100% 100%;">
 	
   <div data-role="header" data-position="fixed" data-fullscreen="true">
-  		<img src="icon2.png" style="width: 55px; float:left;display:inline"><p>&nbsp;&nbsp;Livet MeeTime<p>
+  	<img src="icon2.png" style="width: 55px; float:left;display:inline"><p>&nbsp;&nbsp;MeeTime</p>
   </div>
   
   <div data-role="main" class="ui-content">
   	<div style="background-color:rgba(255,255,255,0.75); width: 80%; margin-left: 10%; margin-top: 15%; border-radius: 10px; text-align: center;">
-  	 <a href="#myPopupDialog" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" >Open Tour</a>  	   
-	 <div data-role="popup" id="myPopupDialog" data-overlay-theme="b" data-dismissible="false">
+  	 
+	 <div data-role="popup" id="tour" data-overlay-theme="b" data-dismissible="false">
       <div data-role="header">
         <h1>Welcome to MeeTime!</h1>
       </div>
@@ -69,9 +69,24 @@
         <div style="text-transform: none; text-align:justify; height: 400px; width: 100%;">
         	Livet MEE Time was inspired and designed by wellness professionals and a scientist with over 40 years of collective research and experience. The App features tools to inspire employees to plan, track, chart and perfect a healthier lifestyle. Users can track Stress levels vs. Food cravings and relate it graphically via a chart to Weight, Blood sugar, Blood pressure, and get recommendations and tips to make better choices and find alternative solutions to achieve their health goals. Users will be empowered with Health tips, natural proven herbal remedies, optimal water consumptions, daily reminders, stress reduction techniques along with many other key insights on achieving optimal health.
         </div>
-        <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b ui-icon-back ui-btn-icon-left" data-rel="back">Go Back</a>
+        <a href="#tour2" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b ui-icon-back ui-btn-icon-left" data-rel="back">Skip Tour</a>
       </div>
-     </div> 
+     </div>
+     
+     
+     <div data-role="popup" id="tips" data-overlay-theme="b" data-dismissible="false">
+      <div data-role="header">
+        <h1>MeeTime Tips!</h1>
+      </div>
+
+      <div data-role="main" class="ui-content" style="text-align: center;" >
+        <div id="dtip" style="text-transform: none; text-align:justify; height: 300px; width: 100%;">
+        	Livet MEE Time was inspired and designed by wellness professionals and a scientist with over 40 years of collective research and experience. The App features tools to inspire employees to plan, track, chart and perfect a healthier lifestyle. Users can track Stress levels vs. Food cravings and relate it graphically via a chart to Weight, Blood sugar, Blood pressure, and get recommendations and tips to make better choices and find alternative solutions to achieve their health goals. Users will be empowered with Health tips, natural proven herbal remedies, optimal water consumptions, daily reminders, stress reduction techniques along with many other key insights on achieving optimal health.
+        </div>
+        <a href="#myPanel" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b ui-icon-back ui-btn-icon-left" data-rel="back">Close Tip</a>
+      </div>
+     </div>
+      
 	</div>
   </div>
 
@@ -89,6 +104,8 @@
           <h3>Editing Profile</h3>
           <label for="name" class="ui-hidden-accessible">Name:</label>
           <input type="text" name="profile_name" id="profile_name" placeholder="Name">
+          <label for="profile_gender">Profile Picture</label>
+          <input type="button" value="Get Picture" onclick="navigator.camera.getPicture( cameraSuccess, cameraError, [ cameraOptions ] );">
           <label for="profile_gender">Gender</label>
           <select name="profile_gender" id="profile_gender">
           		<option value="male">Male</option>
@@ -118,10 +135,10 @@
       </form>
   </div> 
 
- <div data-role="header" data-position="fixed" data-fullscreen="true" class="text-center" >
-  		<img src="icon2.png" style="width: 55px; float:left; display:inline;"><p style="float: left;">&nbsp;&nbsp;Livet Wellness<p>
+  <div data-role="header" data-position="fixed" data-fullscreen="true">
+  	<img src="icon2.png" style="width: 55px; float:left;display:inline"><p>&nbsp;&nbsp;MeeTime</p><a href="#home" data-icon="home" class="ui-btn-right">Home</a>
   </div>
-
+  
   <div data-role="main" class="ui-content text-center">
   	
   	<div style="background-color:rgba(255,255,255,0.75); width: 80%; margin-left: 10%; margin-top: 15%; border-radius: 10px; text-align: center;">
@@ -151,8 +168,8 @@
 
 <div data-role="page"  id="calendaring" style="background: #ffffff url(images/1554564_524919460940652_2126412582_n.jpg) no-repeat fixed center; background-size: 100% 100%;" >
 
-  <div data-role="header" data-position="fixed" data-fullscreen="true" class="text-center" >
-  		<img src="icon2.png" style="width: 55px; float:left; display:inline;"><p style="float: left;">&nbsp;&nbsp;Livet MeeTime<p>
+  <div data-role="header" data-position="fixed" data-fullscreen="true">
+  	<img src="icon2.png" style="width: 55px; float:left;display:inline"><p>&nbsp;&nbsp;MeeTime</p><a href="#home" data-icon="home" class="ui-btn-right">Home</a>
   </div>
   
   <div data-role="main" class="ui-content text-center main_content">
@@ -172,8 +189,8 @@
 
 <div data-role="page"  id="reading" style="background: #ffffff url(images/1554564_524919460940652_2126412582_n.jpg) no-repeat fixed center; background-size: 100% 100%;" >
 
-  <div data-role="header" data-position="fixed" data-fullscreen="true" class="text-center" >
-  		<img src="icon2.png" style="width: 55px; float:left; display:inline;"><p style="float: left;">&nbsp;&nbsp;Livet MeeTime<p>
+  <div data-role="header" data-position="fixed" data-fullscreen="true">
+  	<img src="icon2.png" style="width: 55px; float:left;display:inline"><p>&nbsp;&nbsp;MeeTime</p><a href="#home" data-icon="home" class="ui-btn-right">Home</a>
   </div>
 
   <div data-role="main" class="ui-content text-center">
@@ -217,10 +234,10 @@
 
 <div data-role="page"  id="craving" style="background: #ffffff url(images/1554564_524919460940652_2126412582_n.jpg) no-repeat fixed center; background-size: 100% 100%;" >
 
-  <div data-role="header" data-position="fixed" data-fullscreen="true" class="text-center" >
-  		<img src="icon2.png" style="width: 55px; float:left; display:inline;"><p style="float: left;">&nbsp;&nbsp;Livet MeeTime<p>
+  <div data-role="header" data-position="fixed" data-fullscreen="true">
+  	<img src="icon2.png" style="width: 55px; float:left;display:inline"><p>&nbsp;&nbsp;MeeTime</p><a href="#home" data-icon="home" class="ui-btn-right">Home</a>
   </div>
-
+  
   <div data-role="main" class="ui-content text-center">
   	
   	<div style="background-color:rgba(255,255,255,0.75); width: 80%; margin-left: 10%; margin-top: 15%; border-radius: 10px; text-align: center; padding-bottom: 2%;">
@@ -265,10 +282,9 @@
 
 <div data-role="page"  id="journal" style="background: #ffffff url(images/1554564_524919460940652_2126412582_n.jpg) no-repeat fixed center; background-size: 100% 100%;" >
 
-  <div data-role="header" data-position="fixed" data-fullscreen="true" class="text-center" >
-  		<img src="icon2.png" style="width: 55px; float:left; display:inline;"><p style="float: left;">&nbsp;&nbsp;Livet MeeTime<p>
+  <div data-role="header" data-position="fixed" data-fullscreen="true">
+  	<img src="icon2.png" style="width: 55px; float:left;display:inline"><p>&nbsp;&nbsp;MeeTime</p><a href="#home" data-icon="home" class="ui-btn-right">Home</a>
   </div>
-
   <div data-role="main" class="ui-content text-center">
   	
   	<div style="background-color:rgba(255,255,255,0.75); width: 80%; margin-left: 10%; margin-top: 15%; border-radius: 10px; text-align: center;">
@@ -341,8 +357,8 @@
 
 <div data-role="page"  id="charts" style="background: #ffffff url(images/1554564_524919460940652_2126412582_n.jpg) no-repeat fixed center; background-size: 100% 100%;" >
 
-   <div data-role="header" data-position="fixed" data-fullscreen="true" class="text-center" >
-  		<img src="icon2.png" style="width: 55px; float:left; display:inline;"><p style="float: left;">&nbsp;&nbsp;Livet MeeTime<p>
+  <div data-role="header" data-position="fixed" data-fullscreen="true">
+  	<img src="icon2.png" style="width: 55px; float:left;display:inline"><p>&nbsp;&nbsp;MeeTime</p><a href="#home" data-icon="home" class="ui-btn-right">Home</a>
   </div>
 
     <!--Div that will hold the pie chart-->
@@ -364,8 +380,8 @@
 
 <div data-role="page"  id="mood_chart" style="background: #ffffff url(images/1554564_524919460940652_2126412582_n.jpg) no-repeat fixed center; background-size: 100% 100%;" >
 
-   <div data-role="header" data-position="fixed" data-fullscreen="true" class="text-center" >
-  		<img src="icon2.png" style="width: 55px; float:left; display:inline;"><p style="float: left;">&nbsp;&nbsp;Livet MeeTime<p>
+  <div data-role="header" data-position="fixed" data-fullscreen="true">
+  	<img src="icon2.png" style="width: 55px; float:left;display:inline"><p>&nbsp;&nbsp;MeeTime</p><a href="#home" data-icon="home" class="ui-btn-right">Home</a>
   </div>
 
     <!--Div that will hold the pie chart-->
@@ -383,9 +399,9 @@
 
 <div data-role="page"  id="craving_chart" style="background: #ffffff url(images/1554564_524919460940652_2126412582_n.jpg) no-repeat fixed center; background-size: 100% 100%;" >
 
-   <div data-role="header" data-position="fixed" data-fullscreen="true" class="text-center" >
-  		<img src="icon2.png" style="width: 55px; float:left; display:inline;"><p style="float: left;">&nbsp;&nbsp;Livet MeeTime<p>
-   </div>
+   <div data-role="header" data-position="fixed" data-fullscreen="true">
+  	<img src="icon2.png" style="width: 55px; float:left;display:inline"><p>&nbsp;&nbsp;MeeTime</p><a href="#home" data-icon="home" class="ui-btn-right">Home</a>
+  </div>
 
     <!--Div that will hold the pie chart-->
     <div style="background-color:rgba(255,255,255,0.75); width: 100%; margin-top: 15%; text-align: center;">
@@ -402,8 +418,8 @@
 
 <div data-role="page"  id="glucose_chart" style="background: #ffffff url(images/1554564_524919460940652_2126412582_n.jpg) no-repeat fixed center; background-size: 100% 100%;" >
 
-   <div data-role="header" data-position="fixed" data-fullscreen="true" class="text-center" >
-  		<img src="icon2.png" style="width: 55px; float:left; display:inline;"><p style="float: left;">&nbsp;&nbsp;Livet MeeTime<p>
+  <div data-role="header" data-position="fixed" data-fullscreen="true">
+  	<img src="icon2.png" style="width: 55px; float:left;display:inline"><p>&nbsp;&nbsp;MeeTime</p><a href="#home" data-icon="home" class="ui-btn-right">Home</a>
   </div>
 
     <!--Div that will hold the pie chart-->
@@ -423,8 +439,8 @@
 
 <div data-role="page"  id="bp_chart" style="background: #ffffff url(images/1554564_524919460940652_2126412582_n.jpg) no-repeat fixed center; background-size: 100% 100%;" >
 
-   <div data-role="header" data-position="fixed" data-fullscreen="true" class="text-center" >
-  		<img src="icon2.png" style="width: 55px; float:left; display:inline;"><p style="float: left;">&nbsp;&nbsp;Livet MeeTime<p>
+  <div data-role="header" data-position="fixed" data-fullscreen="true">
+  	<img src="icon2.png" style="width: 55px; float:left;display:inline"><p>&nbsp;&nbsp;MeeTime</p><a href="#home" data-icon="home" class="ui-btn-right">Home</a>
   </div>
 
     <!--Div that will hold the pie chart-->
